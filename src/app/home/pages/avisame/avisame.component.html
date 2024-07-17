@@ -1,0 +1,41 @@
+<!--<p>avisame works!</p>-->
+<link rel="stylesheet" href="../../../../css/home.css">
+<link rel="stylesheet" href="../../../../css/formularios.css">
+
+<div class="contenedorAvisame">
+    <div class="backgroundHome">
+        <!--Titulo del apartado-->
+        <div class="encabezados">
+            <h1 class="Examiner">Notifícame</h1>
+        </div>
+        <!--Botones de navegacion a home-->
+        <div class="contenedorRegresar">
+            <button class="botonNavegacion" routerLink="/sr-macondo/acerca-de">
+                <mat-icon>info</mat-icon>
+            </button>
+            <button class="botonNavegacion" routerLink="/sr-macondo/tienda">
+                <mat-icon>home</mat-icon>
+            </button>
+        </div>
+
+        
+        <p class="centrado">¿Deseas recibir notificaciones? Mantente al dia con nuestros productos en oferta o comidas del día con Web Sr. Macondo</p>
+        <div class="contenedorEmail">
+
+            <!--Para ingresar el nombre y el correo-->
+            <div class="grupoFormulario">
+                <label for="nombre" class="labelEmailF">Nombre</label>
+                <input type="text" class="control" id="nombre" placeholder="Ingresa tu nombre">
+            </div>
+            <div class="grupoFormulario">
+                <label for="email" class="labelEmailF">Email</label>
+                <input type="email" class="control" id="email" placeholder="ingresa-tu@email.com">
+            </div>
+
+            <div class="contenedorGuardar">
+                <button class="botonGuardar">
+                    <mat-icon>save_as</mat-icon>
+                </button>
+            </div>
+    </div>
+</div>

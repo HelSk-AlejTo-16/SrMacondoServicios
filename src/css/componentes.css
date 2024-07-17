@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teachers&display=swap');
+@import url('https://db.onlinewebfonts.com/c/e785a7f1d551f5d098f780bbd15e1ef3?family=Examiner+NF+W01+Bold');
+
+/******************* Fuentes *******************/
+/*Fuente de los subtitulos*/
+.balsamiq-sans-regular {
+    font-family: "Balsamiq Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+    color: rgb(46, 22, 7);
+  }
+
+/*Titulos de los encabezados*/
+.Examiner {
+    font-family: 'Examiner NF W01 Bold';
+    letter-spacing: 0.3rem;
+  }
+
+/******************* Fondos *******************/
+/*Fondo de acceder*/
+.backgroundAcceder {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://th.bing.com/th/id/R.621796c8c5c215defa9efbd26ab2eee5?rik=4sCdBE0RVllRzg&pid=ImgRaw&r=0');
+    background-attachment: fixed;  
+    background-size: cover;
+}
+
+/******************* Contenedores *******************/
+/*Contenedor del formulario para acceder*/
+.contenidoAcceder {
+    background-color: rgb (255, 255, 255);
+    margin: auto;
+    width: 40rem;
+    height: 20rem;
+}
+
+/******************* Botones *******************/
+
+
+

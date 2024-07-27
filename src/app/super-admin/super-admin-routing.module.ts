@@ -1,7 +1,17 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PrincipalSaComponent } from './pages/principal-sa/principal-sa.component';
 import { LayoutSaComponent } from './pages/layout-sa/layout-sa.component';
+import { ListaJuegoComponent } from './pages/juego/lista-juego/lista-juego.component';
+import { NuevoJuegoComponent } from './pages/juego/nuevo-juego/nuevo-juego.component';
+import { InfoJuegoComponent } from './pages/juego/info-juego/info-juego.component';
+import { ListaSucursalComponent } from './pages/sucursal/lista-sucursal/lista-sucursal.component';
+import { InfoSucursalComponent } from './pages/sucursal/info-sucursal/info-sucursal.component';
+import { NuevaSucursalComponent } from './pages/sucursal/nueva-sucursal/nueva-sucursal.component';
+import { ListaEmpleadoComponent } from './pages/empleado/lista-empleado/lista-empleado.component';
+import { InfoEmpleadoComponent } from './pages/empleado/info-empleado/info-empleado.component';
+import { NuevoEmpleadoComponent } from './pages/empleado/nuevo-empleado/nuevo-empleado.component';
+import { EditAcercaDeComponent } from './pages/edit-acerca-de/edit-acerca-de.component';
 
 const routes: Routes = [
   {
@@ -11,6 +21,56 @@ const routes: Routes = [
       {
         path: 'principal',
         component: PrincipalSaComponent
+      },
+      //Craga a los componentes de juegos
+      {
+        path: 'juegos' ,
+        component: ListaJuegoComponent
+      },
+      {
+        path: 'juego' ,
+        component: InfoJuegoComponent
+      },
+      {
+        path: 'nuevo-juego' ,
+        component: NuevoJuegoComponent
+      },
+      //Carga a los componentes de sucursal
+      {
+        path: 'sucursales' ,
+        component: ListaSucursalComponent
+      },
+      {
+        path: 'sucursal' ,
+        component: InfoSucursalComponent
+      },
+      {
+        path: 'nueva-sucursal' ,
+        component: NuevaSucursalComponent
+      },
+      //Carga los componentes de empleado
+      {
+        path: 'empleados' ,
+        component: ListaEmpleadoComponent
+      },
+      {
+        path: 'empleado' ,
+        component: InfoEmpleadoComponent
+      },
+      {
+        path: 'nuevo-empleado' ,
+        component: NuevoEmpleadoComponent
+      },
+      //Va a un componente que edita la informacion del componente acerca-de en home
+      {
+        path: 'editar-info' ,
+        component: EditAcercaDeComponent
+      },
+      //Lo que siempre carga aunque no se escriba nada
+      {
+        path: '',
+        redirectTo: 'principal',
+        pathMatch: 'full'
       }
     ]
   }

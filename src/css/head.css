@@ -76,12 +76,35 @@
 
 /*Fondo de la pagina*/
 #fondo {
-  background-image: url('https://th.bing.com/th/id/R.ff6867753509b17e13cc921b47cccc0a?rik=yvrui%2boGJEdhqQ&pid=ImgRaw&r=0');
+  /*background-image: url('https://th.bing.com/th/id/R.ff6867753509b17e13cc921b47cccc0a?rik=yvrui%2boGJEdhqQ&pid=ImgRaw&r=0');*/
+  /*background-image: url('https://i.pinimg.com/736x/c5/e5/21/c5e521ba1f22c297f0e909dff399a152.jpg');*/
+  /*background-image: url('/assets/image/bitmap.png');*/
+  background-image: url('/assets/image/WitheColor.png');
+  background-image: url('/assets/image/brown.png');
+  background-image: url('/assets/image/dark.png');
+  background-image: url('/assets/image/dem.png');
   background-attachment: fixed;  
   /*background-position: center center;*/
   background-size: cover;
   width: 100%;
   height: auto;
+}
+
+/*Fondo de la pagina*/
+#fondoV2 {
+  /*background-image: url('https://th.bing.com/th/id/R.ff6867753509b17e13cc921b47cccc0a?rik=yvrui%2boGJEdhqQ&pid=ImgRaw&r=0');*/
+  /*background-image: url('https://i.pinimg.com/736x/c5/e5/21/c5e521ba1f22c297f0e909dff399a152.jpg');*/
+  /*background-image: url('/assets/image/bitmap.png');*/
+  background-image: url('/assets/image/WitheColor.png');
+  background-image: url('/assets/image/brown.png');
+  background-image: url('/assets/image/dark.png');
+  background-image: url('/assets/image/dem.png');
+  background-attachment: fixed;  
+  /*background-position: center center;*/
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
 }
 
 /*pie de pagina*/

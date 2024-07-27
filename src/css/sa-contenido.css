@@ -1,0 +1,314 @@
+@import url('https://db.onlinewebfonts.com/c/e785a7f1d551f5d098f780bbd15e1ef3?family=Examiner+NF+W01+Bold');
+
+/******************* Contenedores *******************/
+
+/* Estilos para el contenido principal, es el contenedor de la pagina principal */
+.principalContenedor {
+    position: relative; /* Necesario para posicionar el componente de los botones dentro del contenedor */
+    height: 100vh; /* Altura completa de la ventana */
+    padding: 1rem; /* Espaciado interno */
+}
+
+/* Contenedor principal que alinea los botones */
+.botonContenedor {
+    position: fixed; /* Fija el contenedor en la pantalla */
+    right: 2rem; /* Margen derecho considerable */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Ajusta para centrar exactamente */
+    display: flex; /* Utiliza Flexbox para alinear */
+    flex-direction: column; /* Alinea los botones en columna */
+    gap: 1rem; /* Espacio entre botones */
+}
+
+/*Fondo del contenedor de la informacion que hay en las paginas de super-admin, contiene a tablas, formularios etc.*/
+.fondoSA {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  /*background-color: rgba(255, 255, 255, 0.842);*/
+  background-color: rgba(8, 125, 107, 0.87);
+  height: 40rem;
+  width: 80rem;
+}
+
+/*Contenedor de la tabla*/
+.contenedorTabla {
+  display: flex;
+  width: 80%;
+  height: 55%;
+  overflow-y: auto;
+}
+
+/*Contenedor para ubicar los botones al lateral*/
+.contenedorBotones {
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+}
+.grupoBotones {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+/*Contenedor de los formularios*/
+.contenedorInfo {
+  background-color: #ffffff;
+  width: 80%;
+  height: 60%;
+  overflow-y: auto;
+  align-items: normal;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+
+/*Contenedor de la edicion de aerca de*/
+.contenedorAD {
+  margin-top: 0;
+  background-color: #ffffff;
+  width: 80%;
+  height: 55%;
+  overflow-y: auto;
+  align-items: normal;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+/******************* Botones *******************/
+
+/* Estilos para los botones */
+.botonPrincipal {
+    padding: 1.5rem; /* Espaciado interno */
+    font-size: 2rem;
+    background-color: rgb(8, 125, 107); /* Color de fondo azul */
+    color: white; /* Color del texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+.botonPrincipal:hover {
+    background-color: hwb(24 24% 37%); /* Color de fondo azul más oscuro al pasar el cursor */
+}
+
+/*Botones de navegacion de las paginas home que no son la tienda*/
+.botonNavegacion {
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: rgb(46, 22, 7);
+  color:  rgb(255, 247, 241);
+  border: none; /* Opcional: Elimina el borde del botón */
+  cursor: pointer; /* Cursor de puntero */
+  border-radius: 4px; /* Borde redondeado */
+  transition: background-color 0.3s ease; /* Transición para el efecto hover */
+}
+.botonNavegacion mat-icon {
+  font-size: 1.5rem; /* Tamaño del icono */
+}
+.botonNavegacion:hover {
+  background-color: rgb(83, 50, 30);
+}
+
+/*Botones de agregar*/
+.botonesAgregar {
+  background-color: rgb(7, 70, 60);
+  color: rgb(255, 255, 255); /* Color del texto */
+  width: 15rem; /* Establece el ancho deseado */
+  height: 3rem; /* Establece la altura deseada */
+  font-size: 1.5rem; /* Ajusta el tamaño del texto si es necesario */
+  border: none; /* Elimina el borde por defecto */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+  margin-top: 1rem;
+
+}
+.botonesAgregar:hover {
+  background-color: rgb(46, 22, 7);
+  color: rgb(255, 255, 255); /* Color del texto */
+}
+
+
+/*Botones Agregar/modificar*/
+.botonAgreMod {
+  margin: 0.5;
+  width: auto; /* Establece el ancho deseado */
+  height: 3rem; /* Establece la altura deseada */
+  color:  rgb(255, 255, 255); /* Color de fondo del botón */
+  background-color: rgba(7, 153, 189, 0.192); /* Color del texto */
+
+  display: flex; /* Utiliza flexbox para centrar el contenido */
+  align-items: center; /* Centra verticalmente */
+  gap: 8px; /* Espaciado entre el icono y el texto */
+  padding: 5px 10px; /* Espaciado dentro del botón */
+  border: 0.2rem solid rgb(255, 255, 255); /* Opcional: Elimina el borde del botón */
+  font-size: 16px; /* Tamaño de la fuente */
+  cursor: pointer; /* Cursor de puntero */
+  border-radius: 10px; /* Borde redondeado */
+  transition: background-color 0.3s ease; /* Transición para el efecto hover */
+}
+.botonAgreMod mat-icon {
+    font-size: 20px; /* Tamaño del icono */
+}
+.botonAgreMod:hover {
+  background-color: rgb(7, 153, 189);
+  color:rgb( 255, 255,255);
+  border: 0.2rem solid rgba(7, 153, 189, 0);
+  }
+
+/*Botones Eliminar*/
+.botonEliminar {
+  margin: 0.5;
+  width: auto; /* Establece el ancho deseado */
+  height: 3rem; /* Establece la altura deseada */
+  color:  rgb(255, 255, 255); /* Color de fondo del botón */
+  background-color: rgba(189, 7, 7, 0.479); /* Color del texto */
+
+  display: flex; /* Utiliza flexbox para centrar el contenido */
+  align-items: center; /* Centra verticalmente */
+  gap: 8px; /* Espaciado entre el icono y el texto */
+  padding: 5px 10px; /* Espaciado dentro del botón */
+  border: 0.2rem solid rgb(255, 255, 255); /* Opcional: Elimina el borde del botón */
+  font-size: 16px; /* Tamaño de la fuente */
+  cursor: pointer; /* Cursor de puntero */
+  border-radius: 10px; /* Borde redondeado */
+  transition: background-color 0.3s ease; /* Transición para el efecto hover */
+}
+.botonEliminar mat-icon {
+    font-size: 20px; /* Tamaño del icono */
+}
+.botonEliminar:hover {
+  background-color: rgb(189, 7, 7);
+  color:rgb( 255, 255,255);
+  border: 0.2rem solid rgba(189, 7, 7, 0);
+  }
+
+  /*Botones guardar*/
+.botonGuardar {
+  margin: 0.5;
+  width: auto; /* Establece el ancho deseado */
+  height: 3rem; /* Establece la altura deseada */
+  color:  rgb(255, 255, 255); /* Color de fondo del botón */
+  background-color: rgba(7, 153, 189, 0.192); /* Color del texto */
+
+  display: flex; /* Utiliza flexbox para centrar el contenido */
+  align-items: center; /* Centra verticalmente */
+  gap: 8px; /* Espaciado entre el icono y el texto */
+  padding: 5px 10px; /* Espaciado dentro del botón */
+  border: 0.2rem solid rgb(255, 255, 255); /* Opcional: Elimina el borde del botón */
+  font-size: 20px; /* Tamaño de la fuente */
+  cursor: pointer; /* Cursor de puntero */
+  border-radius: 10px; /* Borde redondeado */
+  transition: background-color 0.3s ease; /* Transición para el efecto hover */
+}
+.botonGuardar mat-icon {
+    font-size: 24px; /* Tamaño del icono */
+}
+.botonGuardar:hover {
+  background-color: rgb(7, 153, 189);
+  color:rgb( 255, 255,255);
+  border: 0.2rem solid rgba(7, 153, 189, 0);
+  }
+
+
+
+/******************* Fuentes *******************/
+.Examiner {
+  font-family: 'Examiner NF W01 Bold';
+  font-size: 3rem;
+  color: #ffffff;
+  margin-top: 1rem;
+}
+
+
+/******************* Tabla *******************/
+/*Tabla estilo*/
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.styled-table th,
+.styled-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+.styled-table tbody {
+  background-color: #ffffff;
+}
+.styled-table tbody tr:hover {
+  background-color: #1a684c; /* Cambia el color de fondo al pasar el ratón */
+  color: #ffffff;
+}
+.styled-table thead {
+  background-color: #f2f2f2;
+}
+
+/******************* Formulario *******************/
+
+/* Campos de entrada del formulario */
+.form-control {
+  width: 100%; /* Ancho completo */
+  padding: 10px; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 5px; /* Bordes redondeados */
+  box-sizing: border-box; /* Incluye el borde en el tamaño total */
+  margin: 0.5rem;
+}
+
+/* Estilo para el placeholder del campo de entrada */
+.form-control::placeholder {
+  color: rgb(125, 118, 108); /* Color del placeholder */
+  opacity: 1; /* Opacidad completa */
+}
+
+
+/* Estilo para el campo de entrada cuando está enfocado */
+.form-control:focus {
+  color: rgb(87, 78, 73); /* Color del texto */
+  background-color: rgb(255, 250, 246); /* Color de fondo */
+  border-color: rgb(238, 170, 143); /* Color del borde */
+  outline: 0; /* Sin contorno */
+  box-shadow: 0 0 0 0.2rem rgba(238, 147, 73, 0.25); /* Sombra */
+}
+
+
+/******************* Contenedor Acerca de y sus elementos *******************/
+
+.contenedorAD {
+  display: flex; /* Utiliza Flexbox para el diseño */
+  flex-direction: column; /* Alinea los elementos en una columna */
+  gap: 1rem; /* Añade espacio entre los elementos */
+  margin: 1rem; /* Añade un margen alrededor del contenedor */
+}
+
+.contenedorAD div {
+  display: flex; /* Utiliza Flexbox para alinear elementos internos */
+  flex-direction: column; /* Alinea los elementos internos en una columna */
+}
+
+.contenedorAD label {
+  margin-bottom: 0.5rem; /* Añade espacio debajo de los labels */
+}
+
+.contenedorAD input {
+  padding: 0.5rem; /* Añade padding a los inputs y textareas */
+  margin-bottom: 1rem; /* Añade espacio debajo de los inputs y textareas */
+  width: 100%; /* Asegura que los inputs y textareas ocupen todo el ancho disponible */
+  box-sizing: border-box; /* Incluye el padding y border en el ancho total del elemento */
+}
+
+.contenedorAD textarea {
+  padding: 0.5rem; /* Añade padding a los inputs y textareas */
+  margin-bottom: 1rem; /* Añade espacio debajo de los inputs y textareas */
+  width: 100%; /* Asegura que los inputs y textareas ocupen todo el ancho disponible */
+  box-sizing: border-box; /* Incluye el padding y border en el ancho total del elemento */
+  min-height: 6rem;
+}
+

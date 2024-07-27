@@ -110,6 +110,7 @@
 .cuadroBanco {
     width: 30rem;
     height: auto;
+    margin-left: 6rem;
   }
 
 /*Contenedores del div*/
@@ -286,6 +287,15 @@
 .encabezadoProducto {
   text-align: center;
   font-size: 3rem;
+}
+
+/*Longitudes de la imagen del qr*/
+.imagenQr {
+  width: 10rem; /* La imagen ocupa el 100% del ancho del contenedor padre */
+  height: auto; /* Mantiene la proporción de la imagen */
+  max-height: 9rem; /* Altura máxima de la imagen */
+  object-fit: cover; /* Ajusta la imagen para que cubra el área de la imagen */
+  margin: 10px; /* Margen alrededor de la imagen */
 }
 
 /*Longitudes de la imagen de cada card*/

@@ -145,10 +145,12 @@
                     <mat-icon>how_to_reg</mat-icon>
                     Registrar llegada
                 </button>
+                <!--En esta parte este boton registrará un 1 como de que si esta en la base de datos en empleado-->
                 <button class="botonLateral" data-bs-toggle="modal" data-bs-target="#ModalSalida">
                     <mat-icon>directions_run</mat-icon>
                     Puesto Salida
                 </button>
+                <!--En esta parte este boton registrará un 0 como de que si esta en la base de datos en empleado-->
                 <br>
                 <br>
                 <br>
@@ -161,6 +163,14 @@
                     <mat-icon>casino</mat-icon>
                     Juegos
                 </button>
+                <button class="botonLateral" routerLink="/empleado-p/productos-e">
+                  <mat-icon>store</mat-icon>
+                  Productos
+              </button>
+              <button class="botonLateral" data-bs-toggle="modal" data-bs-target="#ModalAviso" >
+                <mat-icon>mail</mat-icon>
+                Avisos
+            </button>
                 
                 
             </div>
@@ -195,6 +205,26 @@
         </div>
         <div class="modal-body">
             Se confirmó su llegada
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-success" data-bs-dismiss="modal">Aceptar</button>
+          </div>
+         
+       
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="ModalAviso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Avisos</h1>
+
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            ....
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-success" data-bs-dismiss="modal">Aceptar</button>

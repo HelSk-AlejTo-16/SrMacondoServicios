@@ -11,9 +11,14 @@ import { MaterialModule } from '../material/material.module';
 import { InfoSucursalComponent } from './pages/sucursal-e/info-sucursal/info-sucursal.component';
 import { ListaJuegoComponent } from './pages/juego-e/lista-juego/lista-juego.component';
 import { InfoJuegoComponent } from './pages/juego-e/info-juego/info-juego.component';
-import { NuevoJuegoComponent } from './pages/juego-e/nuevo-juego/nuevo-juego.component';
+
 import { ListaSucursalComponent } from './pages/sucursal-e/lista-sucursal/lista-sucursal.component';
-import { NuevaSucursalComponent } from './pages/sucursal-e/nueva-sucursal/nueva-sucursal.component';
+import { InfoProductoComponent } from './pages/producto-e/info-producto/info-producto.component';
+import { ListaProductoComponent } from './pages/producto-e/lista-producto/lista-producto.component';
+import { NuevoProductoComponent } from './pages/producto-e/nuevo-producto/nuevo-producto.component';
+
+
+
 
 
 @NgModule({
@@ -24,9 +29,12 @@ import { NuevaSucursalComponent } from './pages/sucursal-e/nueva-sucursal/nueva-
     InfoSucursalComponent,
     ListaJuegoComponent,
     InfoJuegoComponent,
-    NuevoJuegoComponent,
     ListaSucursalComponent,
-    NuevaSucursalComponent
+    InfoProductoComponent,
+    ListaProductoComponent,
+    NuevoProductoComponent
+    
+    
 
    
   ],

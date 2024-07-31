@@ -6,13 +6,14 @@ import { HomeEComponent } from './pages/home-e/home-e.component';
 import { LayoutPagesComponent } from './pages/layout-pages/layout-pages.component';
 
 
-
 import { ListaSucursalComponent } from './pages/sucursal-e/lista-sucursal/lista-sucursal.component';
 import { ListaJuegoComponent } from './pages/juego-e/lista-juego/lista-juego.component';
 import { InfoJuegoComponent } from './pages/juego-e/info-juego/info-juego.component';
-import { NuevoJuegoComponent } from './pages/juego-e/nuevo-juego/nuevo-juego.component';
 import { InfoSucursalComponent } from './pages/sucursal-e/info-sucursal/info-sucursal.component';
-import { NuevaSucursalComponent } from './pages/sucursal-e/nueva-sucursal/nueva-sucursal.component';
+import { InfoProductoComponent } from './pages/producto-e/info-producto/info-producto.component';
+import { ListaProductoComponent } from './pages/producto-e/lista-producto/lista-producto.component';
+import { NuevoProductoComponent } from './pages/producto-e/nuevo-producto/nuevo-producto.component';
+
 
 const routes: Routes = [
   {
@@ -28,18 +29,19 @@ const routes: Routes = [
      path:'juego-e',component:InfoJuegoComponent
     },
     {
-      path:'nuevo-juego-e',component:NuevoJuegoComponent
-    },
-  
-    {
       path:'sucursales-e',component:ListaSucursalComponent
     },
     {
       path: 'sucursal-e',component:InfoSucursalComponent
     },
     {
-      path: 'nueva-sucursal-e',component:NuevaSucursalComponent
-    }
+     path:'producto-e',component:InfoProductoComponent
+    },
+    {
+      path:'productos-e',component:ListaProductoComponent
+    },
+    {path:'crear-producto-e',component:NuevoProductoComponent}
+  
     //path 'crearventa/:idv, component:CrearVentaComponent'
     //Uso para la base de datos(?)
     //path: ':idv', component: ventaComponent

@@ -1,0 +1,72 @@
+<!--<p>info-juego works!</p>-->
+<link rel="stylesheet" href="../../../../../css/sa-contenido.css">
+
+<div clss="principalContenedor">
+    <!--Fondo de color-->
+    <div class="fondoSA">
+        <!--Titulo-->
+        <h1 class="Examiner"> Juego </h1>
+        <!--Botones de navegacion-->
+        <div class="contenedorBotones">
+            <div class="grupoBotones">
+                <button class="botonNavegacion" routerLink="/super-admin/principal">
+                    <mat-icon>home</mat-icon>
+                </button>
+                <button class="botonNavegacion" routerLink="/super-admin/juegos">
+                    <mat-icon>undo</mat-icon>
+                </button>
+            </div>
+        </div>
+        <!--Contenedor del formulario-->
+        <div class="contenedorInfo">
+            <h3 >IDJuego</h3>
+            <div class="mb-3">
+                <label for="juego" class="form-label">Juego</label>
+                <input type="text" class="form-control" id="juego" placeholder="Ingresa el nombre del juego">
+            </div>
+            <div class="mb-3">
+                <label for="costo" class="form-label">Costo</label>
+                <input type="text" class="form-control" id="costo" placeholder="Costo de compra">
+            </div>
+            <div class="mb-3">
+                <label for="renta" class="form-label">Precio Renta</label>
+                <input type="text" class="form-control" id="renta" placeholder="Renta del juego">
+            </div>
+        </div>
+        <!--Botones para guardar la informacion del empleado-->
+        <div class="contenedorBotones">
+            <div class="grupoBotones">
+                <button class="botonAgreMod">
+                    <mat-icon>edit</mat-icon>
+                    Modificar
+                </button>
+                <button class="botonEliminar" data-bs-toggle="modal" data-bs-target="#EliminarModal">
+                    <mat-icon>delete</mat-icon>
+                    Eliminar
+                </button>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div>
+    <p>Juegos</p>
+</div>
+<!--Modales-->
+<div class="modal fade" id="EliminarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">¿Seguro que quieres eliminar la sucursal?</h1>
+          <button type="button" class="btn-success" data-bs-dismiss="modal" aria-label="Eliminar"></button>
+        </div>
+        <div class="modal-body">
+          Se confirma su llegada
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Aceptar</button>
+        </div>
+       
+      </div>
+    </div>
+  </div>

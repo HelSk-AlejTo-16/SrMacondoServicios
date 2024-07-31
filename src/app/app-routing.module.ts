@@ -14,6 +14,11 @@ const routes: Routes = [
     //component: HomeModule
   },
   {
+    path:'empleado-p',
+    loadChildren:() => import('./empleado-p/empleado-p.module').then(m => m.EmpleadoPModule)
+    //component: HomeModule
+  },
+  {
     path: 'acceder',
     component: AccederComponent
   },

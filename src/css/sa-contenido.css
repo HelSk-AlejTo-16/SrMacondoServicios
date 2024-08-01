@@ -92,7 +92,7 @@
     cursor: pointer; /* Cambia el cursor al pasar por encima */
 }
 .botonPrincipal:hover {
-    background-color: hwb(24 24% 37%); /* Color de fondo azul más oscuro al pasar el cursor */
+    background-color: rgb(46, 22, 7); /* Color de fondo azul más oscuro al pasar el cursor */
 }
 
 /*Botones de navegacion de las paginas home que no son la tienda*/

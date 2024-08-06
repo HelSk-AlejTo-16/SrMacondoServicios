@@ -1,5 +1,6 @@
 @import url('https://db.onlinewebfonts.com/c/e785a7f1d551f5d098f780bbd15e1ef3?family=Examiner+NF+W01+Bold');
 
+
 /******************* Contenedores *******************/
 
 /* Estilos para el contenido principal, es el contenedor de la pagina principal */
@@ -29,10 +30,12 @@
   margin-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
-  /*background-color: rgba(255, 255, 255, 0.842);*/
-  background-color: rgba(8, 125, 107, 0.87);
+  background-color: rgba(255, 255, 255, 0.87);
+  /*background-color: rgba(8, 125, 107, 0.87);*/
   height: 40rem;
   width: 80rem;
+  border-radius: 10px;
+  border:none;
 }
 
 /*Contenedor de la tabla*/
@@ -92,7 +95,7 @@
     cursor: pointer; /* Cambia el cursor al pasar por encima */
 }
 .botonPrincipal:hover {
-    background-color: hwb(24 24% 37%); /* Color de fondo azul más oscuro al pasar el cursor */
+    background-color: rgb(46, 22, 7); /* Color de fondo azul más oscuro al pasar el cursor */
 }
 
 /*Botones de navegacion de las paginas home que no son la tienda*/
@@ -142,13 +145,13 @@
   width: auto; /* Establece el ancho deseado */
   height: 3rem; /* Establece la altura deseada */
   color:  rgb(255, 255, 255); /* Color de fondo del botón */
-  background-color: rgba(7, 153, 189, 0.192); /* Color del texto */
+  background-color: rgb(99, 165, 182); /* Color del texto */
 
   display: flex; /* Utiliza flexbox para centrar el contenido */
   align-items: center; /* Centra verticalmente */
   gap: 8px; /* Espaciado entre el icono y el texto */
   padding: 5px 10px; /* Espaciado dentro del botón */
-  border: 0.2rem solid rgb(255, 255, 255); /* Opcional: Elimina el borde del botón */
+  border: none; /* Opcional: Elimina el borde del botón */
   font-size: 16px; /* Tamaño de la fuente */
   cursor: pointer; /* Cursor de puntero */
   border-radius: 10px; /* Borde redondeado */
@@ -160,7 +163,7 @@
 .botonAgreMod:hover {
   background-color: rgb(7, 153, 189);
   color:rgb( 255, 255,255);
-  border: 0.2rem solid rgba(7, 153, 189, 0);
+  border: none;
   }
 
 /*Botones Eliminar*/
@@ -169,13 +172,13 @@
   width: auto; /* Establece el ancho deseado */
   height: 3rem; /* Establece la altura deseada */
   color:  rgb(255, 255, 255); /* Color de fondo del botón */
-  background-color: rgba(189, 7, 7, 0.479); /* Color del texto */
+  background-color: rgb(170, 54, 54); /* Color del texto */
 
   display: flex; /* Utiliza flexbox para centrar el contenido */
   align-items: center; /* Centra verticalmente */
   gap: 8px; /* Espaciado entre el icono y el texto */
   padding: 5px 10px; /* Espaciado dentro del botón */
-  border: 0.2rem solid rgb(255, 255, 255); /* Opcional: Elimina el borde del botón */
+  border: none; /* Opcional: Elimina el borde del botón */
   font-size: 16px; /* Tamaño de la fuente */
   cursor: pointer; /* Cursor de puntero */
   border-radius: 10px; /* Borde redondeado */
@@ -187,7 +190,7 @@
 .botonEliminar:hover {
   background-color: rgb(189, 7, 7);
   color:rgb( 255, 255,255);
-  border: 0.2rem solid rgba(189, 7, 7, 0);
+  border: none;
   }
 
   /*Botones guardar*/
@@ -217,13 +220,39 @@
   border: 0.2rem solid rgba(7, 153, 189, 0);
   }
 
+/*Botones para editar y ver la informacion de la data*/
+
+.botonEditData {
+  margin: 0.5;
+  width: auto; /* Establece el ancho deseado */
+  height: 2.5rem; /* Establece la altura deseada */
+  color:  rgb(255, 255, 255); /* Color de fondo del botón */
+  background-color: rgb(10, 160, 102); /* Color del texto */
+  border: none;
+  display: flex; /* Utiliza flexbox para centrar el contenido */
+  align-items: center; /* Centra verticalmente */
+  gap: 8px; /* Espaciado entre el icono y el texto */
+  padding: auto; /* Espaciado dentro del botón */
+  font-size: 15px; /* Tamaño de la fuente */
+  cursor: pointer; /* Cursor de puntero */
+  border-radius: 10px; /* Borde redondeado */
+  transition: background-color 0.3s ease; /* Transición para el efecto hover */
+}
+.botonEditData mat-icon {
+    font-size: 20px; /* Tamaño del icono */
+}
+.botonEditData:hover {
+  background-color: rgb(8, 112, 86);
+  color:rgb( 255, 255,255);
+  border: none;
+  }
 
 
 /******************* Fuentes *******************/
 .Examiner {
-  font-family: 'Examiner NF W01 Bold';
+  font-family: 'Examiner NF W01 Bold','ExaminerNFW01-Bold', sans-serif;
   font-size: 3rem;
-  color: #ffffff;
+  color: rgb(46, 22, 7);
   margin-top: 1rem;
 }
 
@@ -268,7 +297,6 @@
   opacity: 1; /* Opacidad completa */
 }
 
-
 /* Estilo para el campo de entrada cuando está enfocado */
 .form-control:focus {
   color: rgb(87, 78, 73); /* Color del texto */
@@ -278,6 +306,39 @@
   box-shadow: 0 0 0 0.2rem rgba(238, 147, 73, 0.25); /* Sombra */
 }
 
+/*Para el imput de los selectores*/
+.selectorSA {
+  width: 100%; /* Ancho completo */
+  padding: 10px; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 5px; /* Bordes redondeados */
+  box-sizing: border-box; /* Incluye el borde en el tamaño total */
+  margin: 0.5rem; /* Margen */
+  background-color: white; /* Fondo blanco */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>'); /* Icono de flecha hacia abajo */
+  background-repeat: no-repeat; /* No repetir la imagen */
+  background-position: right 10px top 50%; /* Posicionar la imagen */
+  padding-right: 30px; /* Espacio para el icono */
+  position: relative; /* Necesario para el pseudo-elemento */
+  appearance: none; /* Eliminar la apariencia predeterminada de los navegadores */
+  -webkit-appearance: none; /* Eliminar la apariencia predeterminada de los navegadores en WebKit */
+  -moz-appearance: none; /* Eliminar la apariencia predeterminada de los navegadores en Firefox */
+}
+
+/* Estilo para el placeholder del campo de entrada */
+.textoSelected {
+  color: rgb(125, 118, 108); /* Color del placeholder */
+  opacity: 1; /* Opacidad completa */
+}
+
+/* Estilo para el campo de entrada cuando está enfocado */
+.selectorSA:focus {
+  color: rgb(87, 78, 73); /* Color del texto */
+  background-color: rgb(255, 250, 246); /* Color de fondo */
+  border-color: rgb(238, 170, 143); /* Color del borde */
+  outline: 0; /* Sin contorno */
+  box-shadow: 0 0 0 0.2rem rgba(238, 147, 73, 0.25); /* Sombra */
+}
 
 /******************* Contenedor Acerca de y sus elementos *******************/
 
@@ -312,3 +373,12 @@
   min-height: 6rem;
 }
 
+/******************* Extras *******************/
+/*spam*/
+.requerimientosError {
+  color: rgb(42, 184, 148);
+  margin-left: auto;
+  margin-right: 0;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.8rem;
+}

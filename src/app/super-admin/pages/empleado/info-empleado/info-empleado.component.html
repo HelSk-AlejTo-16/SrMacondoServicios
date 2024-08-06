@@ -20,32 +20,96 @@
         <!--Contenedor del formulario-->
         <div class="contenedorInfo">
             <h3 >IdEmpleado</h3>
-            <div class="mb-3">
-              <label for="nombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre">
-            </div>
-            <div class="mb-3">
-              <label for="puesto" class="form-label">Puesto</label>
-              <input type="text" class="form-control" id="puesto" placeholder="Puesto del empleado">
-            </div>
-            <div class="mb-3">
-                <label for="NSS" class="form-label">NSS</label>
-                <input type="text" class="form-control" id="NSS" placeholder="Numero de Seguro Social">
-              </div>
+            <!--Formulario-->
+            <form [formGroup]="formInfoEmpleado" (ngSubmit)="editarEmpleado()"> 
+                <!--Nombre del empleado-->
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre(s)</label>
+                    <input formControlName="nombre" type="text" class="form-control" id="nombre" placeholder="Ingresa nombre">
+                    <samp *ngIf="formInfoEmpleado.get('nombre')?.hasError('required') && formInfoEmpleado.get('nombre')?.touched" class="requerimientosError">
+                        * El campo nombre es requerido
+                    </samp>
+                </div>
+                <!--Apellido paterno-->
+                <div class="mb-3">
+                    <label for="apePaterno" class="form-label">Apellido paterno</label>
+                    <input formControlName="apePaterno" type="text" class="form-control" id="apePaterno" placeholder="Ingresa apellido paterno">
+                    <samp *ngIf="formInfoEmpleado.get('apePaterno')?.hasError('required') && formInfoEmpleado.get('apePaterno')?.touched" class="requerimientosError">
+                        * El campo apellido paterno es requerido
+                    </samp>
+                </div>
+                <!--Apellido Materno-->
+                <div class="mb-3">
+                    <label for="apeMaterno" class="form-label">Apellido materno</label>
+                    <input formControlName="apeMaterno" type="text" class="form-control" id="apeMaterno" placeholder="Ingresa apellido materno">
+                    <samp *ngIf="formInfoEmpleado.get('apeMaterno')?.hasError('required') && formInfoEmpleado.get('apePaterno')?.touched" class="requerimientosError">
+                        * El campo apellido materno es requerido
+                    </samp>
+                </div>
+                <!--Edad del empleado-->
+                <div class="mb-3">
+                    <label for="edad" class="form-label">Edad</label>
+                    <input formControlName="edad" type="number" class="form-control" id="edad" placeholder="Ingresa edad">
+                    <samp *ngIf="formInfoEmpleado.get('edad')?.hasError('required') && formInfoEmpleado.get('apePaterno')?.touched" class="requerimientosError">
+                        * El campo edad es requerido
+                    </samp>
+                </div>
+                <!--Telefono-->
+                <div class="mb-3">
+                    <label for="telefono" class="form-label">Telefono</label>
+                    <input formControlName="telefono" type="text" class="form-control" id="telefono" placeholder="Ingresa telefono">
+                    <samp *ngIf="formInfoEmpleado.get('telefono')?.hasError('required') && formInfoEmpleado.get('apePaterno')?.touched" class="requerimientosError">
+                        * El campo telefono es requerido
+                    </samp>
+                </div>
+                <!--Email-->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input formControlName="email" type="email" class="form-control" id="email" placeholder="Ingresa email">
+                    <samp *ngIf="formInfoEmpleado.get('email')?.hasError('required') && formInfoEmpleado.get('apePaterno')?.touched" class="requerimientosError">
+                        * El campo email es requerido
+                    </samp>
+                </div>
+                <!--Password para acceso a app de sr macondo-->
+                <div class="mb-3">
+                    <label for="contrasenia" class="form-label">Contraseña</label>
+                    <input formControlName="contrasenia" type="text" class="form-control" id="contrasenia" placeholder="Ingresa contraseña de inicio de sesión">
+                    <samp *ngIf="formInfoEmpleado.get('contrasenia')?.hasError('required') && formInfoEmpleado.get('apePaterno')?.touched" class="requerimientosError">
+                        * El campo contrasenia es requerido
+                    </samp>
+                </div>
+                <!--Estado del empleado-->
+                <div>
+                    <label class="form-label">Estado del empleado</label>
+                    <select formControlName="estado" class="selectorSA">
+                        <option value="true">Presente</option>
+                        <option value="false">Ausente</option>
+                    </select>
+                </div>
+                <!--Rol del empleado-->
+                <div>
+                    <label class="form-label">Rol del empleado</label>
+                    <select formControlName="rol" class="selectorSA">
+                        <option value="1">Empleado</option>
+                        <option value="2">Administrador</option>
+                        <option value="3">Gerente Administrativo</option>
+                    </select>
+                </div>
+                <!--Sucursal-->
+                <div>
+                    <label class="form-label">Sucursal de trabajo</label>
+                    <select formControlName="sucursal" class="selectorSA">
+                        <!--<option *ngFor="let sucursal of sucursales" [value]="sucursal.id">{{sucursal.sucursal}}</option>-->
+                    </select>
+                </div>
+            </form>
             
-              <div class="mb-3">
-                <label for="Salario" class="form-label">Salario</label>
-                <input type="text" class="form-control" id="Salario" placeholder="Ingrese el Salario">
-              </div>
-              <div class="mb-3">
-                <label for="Horario" class="form-label">Horario</label>
-                <input type="text" class="form-control" id="Horario" placeholder="Horario">
-              </div>
+            
         </div>
         <!--Botones para guardar la informacion del empleado-->
         <div class="contenedorBotones">
             <div class="grupoBotones">
-                <button class="botonAgreMod">
+                <button [disabled]="formInfoEmpleado.invalid" type="submit" class="botonAgreMod">
                     <mat-icon>edit</mat-icon>
                     Modificar
                 </button>

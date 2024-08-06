@@ -20,19 +20,37 @@
         <!--Contenedor del formulario-->
         <div class="contenedorInfo">
             <h3 >Datos de sucursal</h3>
-            <div class="mb-3">
-                <label for="sucursal" class="form-label">Nombre Sucursal</label>
-                <input type="text" class="form-control" id="sucursal" placeholder="Sucursal">
-            </div>
-            <div class="mb-3">
-                <label for="localizacion" class="form-label">Localización</label>
-                <input type="text" class="form-control" id="localizacion" placeholder="Localización">
-            </div>
+
+            <form [formGroup]="formAddSucursal" (ngSubmit)="agregarSucursal()">
+                <div class="mb-3">
+                    <label for="sucursal" class="form-label">Nombre Sucursal</label>
+                    <input formControlName="sucursal" type="text" class="form-control" id="sucursal" placeholder="Ingresar nombre de la sucursal">
+                    <samp *ngIf="formAddSucursal.get('contrasenia')?.hasError('required') && formAddSucursal.get('apePaterno')?.touched" class="requerimientosError">
+                        * Se requiere un nombre para la sucursal
+                    </samp>
+                </div>
+                <div class="mb-3">
+                    <label for="localizacion" class="form-label">Localización</label>
+                    <input formControlName="localiza" type="text" class="form-control" id="localizacion" placeholder="Agregar localización">
+                    <samp *ngIf="formAddSucursal.get('contrasenia')?.hasError('required') && formAddSucursal.get('apePaterno')?.touched" class="requerimientosError">
+                        * Se necesita una localidad
+                    </samp>
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">Descripción</label>
+                    <input formControlName="descripcion" type="text" class="form-control" id="descripcion" placeholder="Datos sobre la sucursal">
+                    <samp *ngIf="formAddSucursal.get('contrasenia')?.hasError('required') && formAddSucursal.get('apePaterno')?.touched" class="requerimientosError">
+                        * El campo descripción es requerido
+                    </samp>
+                </div>
+            </form>
+
+            
         </div>
         <!--Botones para guardar la informacion del empleado-->
         <div class="contenedorBotones">
             <div class="grupoBotones">
-                <button class="botonAgreMod">
+                <button [disabled]="formAddSucursal.invalid" type="submit" class="botonAgreMod">
                     <mat-icon>add</mat-icon>
                     Agregar
                 </button>

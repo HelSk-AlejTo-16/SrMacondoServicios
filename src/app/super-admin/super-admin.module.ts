@@ -35,7 +35,7 @@ import { EditAcercaDeComponent } from './pages/edit-acerca-de/edit-acerca-de.com
   imports: [
     CommonModule,
     SuperAdminRoutingModule,
-    MaterialModule
+    MaterialModule,
   ]
 })
 export class SuperAdminModule { }

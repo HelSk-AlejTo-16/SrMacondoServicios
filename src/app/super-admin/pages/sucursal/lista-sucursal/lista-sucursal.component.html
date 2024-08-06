@@ -19,60 +19,24 @@
             <table class="styled-table">
                 <thead>
                   <tr>
-                    <th scope="col">Identificador</th>
+                    <th scope="col">ID</th>
                     <th scope="col">Nombre Sucursal</th>
-                    <th scope="col">Num Sucursal</th>
                     <th scope="col">Localización</th>
+                    <th scope="col">Detalles</th>
+                    <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">S001</th>
-                    <td>Dulcería UTNG</td>
-                    <td>3</td>
-                    <td>Cafetería UTNG</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">S002</th>
-                    <td>Pizzería</td>
-                    <td>4</td>
-                    <td>Cafetería UTNG</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">S003</th>
-                    <td>Alimentos UTNG</td>
-                    <td>9</td>
-                    <td>Cafetería UTNG</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">S003</th>
-                    <td>Alimentos UTNG</td>
-                    <td>9</td>
-                    <td>Cafetería UTNG</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">S003</th>
-                    <td>Alimentos UTNG</td>
-                    <td>9</td>
-                    <td>Cafetería UTNG</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">S003</th>
-                    <td>Alimentos UTNG</td>
-                    <td>9</td>
-                    <td>Cafetería UTNG</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">S003</th>
-                    <td>Alimentos UTNG</td>
-                    <td>9</td>
-                    <td>Cafetería UTNG</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">S003</th>
-                    <td>Alimentos UTNG</td>
-                    <td>8</td>
-                    <td>Cafetería UTNG</td>
+                  <tr *ngFor="let item of listSucursal">
+                    <td> {{ item.id }} </td>
+                    <td> {{ item.sucursal }} </td>
+                    <td> {{ item.localiza }} </td>
+                    <td> {{ item.descripcion }} </td>
+                    <td>
+                      <button routerLink="/super-admin/empleado" class="botonEditData">
+                          <mat-icon>edit</mat-icon>
+                      </button>
+                    </td>
                   </tr>
                 </tbody>
               </table>

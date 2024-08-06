@@ -167,7 +167,7 @@
 
 /*Titulos de los encabezados*/
 .Examiner {
-    font-family: 'Examiner NF W01 Bold';
+    font-family: 'Examiner NF W01 Bold','ExaminerNFW01-Bold', sans-serif;
     letter-spacing: 0.3rem;
   }
 

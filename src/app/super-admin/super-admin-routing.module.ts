@@ -28,7 +28,7 @@ const routes: Routes = [
         component: ListaJuegoComponent
       },
       {
-        path: 'juego' ,
+        path: 'juego/:id' ,
         component: InfoJuegoComponent
       },
       {
@@ -41,7 +41,7 @@ const routes: Routes = [
         component: ListaSucursalComponent
       },
       {
-        path: 'sucursal' ,
+        path: 'sucursal/:id' ,
         component: InfoSucursalComponent
       },
       {
@@ -54,7 +54,7 @@ const routes: Routes = [
         component: ListaEmpleadoComponent
       },
       {
-        path: 'empleado' ,
+        path: 'empleado/:id' ,
         component: InfoEmpleadoComponent
       },
       {

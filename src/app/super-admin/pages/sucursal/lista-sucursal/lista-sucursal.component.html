@@ -16,7 +16,7 @@
         </div>
         <!--Tabla-->
         <div class="contenedorTabla">
-            <table class="styled-table">
+            <table *ngIf="listSucursal.length > 0" class="styled-table">
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
@@ -29,17 +29,26 @@
                 <tbody>
                   <tr *ngFor="let item of listSucursal">
                     <td> {{ item.id }} </td>
-                    <td> {{ item.sucursal }} </td>
-                    <td> {{ item.localiza }} </td>
-                    <td> {{ item.descripcion }} </td>
+                    <td> {{ item.Nom_Suc }} </td>
+                    <td> {{ item.Loc_Suc }} </td>
+                    <td> {{ item.Des_Suc }} </td>
                     <td>
-                      <button routerLink="/super-admin/empleado" class="botonEditData">
+                      <div class="contenedorUD">
+                        <button routerLink="/super-admin/sucursal/{{item.id}}" class="botonEditData">
                           <mat-icon>edit</mat-icon>
-                      </button>
+                        </button>
+                      
+                        <button (click)="deleteSucursal(item.id!)" class="botonEliminar">
+                          <mat-icon>delete</mat-icon>
+                        </button>
+                      </div>
+
+                      
                     </td>
                   </tr>
                 </tbody>
               </table>
+              <h6 *ngIf="listSucursal.length == 0">Upps! No hay sucursales para mostrar</h6>
         </div>
         <div>
             <button class="botonesAgregar" routerLink="/super-admin/nueva-sucursal">

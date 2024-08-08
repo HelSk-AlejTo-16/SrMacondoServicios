@@ -1,6 +1,6 @@
 export interface Sucursal {
     id?: number;
-    sucursal: string;
-    localiza?: string;
-    descripcion?: string;
+    Nom_Suc: string;
+    Loc_Suc: string;
+    Des_Suc: string;
 }

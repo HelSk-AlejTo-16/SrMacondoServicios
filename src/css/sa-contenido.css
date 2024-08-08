@@ -82,6 +82,12 @@
   margin-bottom: 2rem;
 }
 
+/*Contenmedor de los botones de editar y eliminar*/
+.contenedorUD {
+  display: flex; /* Utiliza Flexbox para alinear los botones en una fila */
+  gap: 1rem; /* Espacio entre los botones, ajusta según sea necesario */
+}
+
 /******************* Botones *******************/
 
 /* Estilos para los botones */
@@ -145,7 +151,7 @@
   width: auto; /* Establece el ancho deseado */
   height: 3rem; /* Establece la altura deseada */
   color:  rgb(255, 255, 255); /* Color de fondo del botón */
-  background-color: rgb(99, 165, 182); /* Color del texto */
+  background-color: rgb(46, 160, 189); /* Color del texto */
 
   display: flex; /* Utiliza flexbox para centrar el contenido */
   align-items: center; /* Centra verticalmente */
@@ -161,25 +167,32 @@
     font-size: 20px; /* Tamaño del icono */
 }
 .botonAgreMod:hover {
-  background-color: rgb(7, 153, 189);
+  background-color: rgb(4, 78, 97);
   color:rgb( 255, 255,255);
   border: none;
+  }
+
+.botonAgreMod:disabled {
+  background-color: rgb(164, 216, 230);
+  color:rgb( 255, 255,255);
+  border: none;
+  cursor: not-allowed;
   }
 
 /*Botones Eliminar*/
 .botonEliminar {
   margin: 0.5;
   width: auto; /* Establece el ancho deseado */
-  height: 3rem; /* Establece la altura deseada */
+  height: 2.5rem; /* Establece la altura deseada */
   color:  rgb(255, 255, 255); /* Color de fondo del botón */
-  background-color: rgb(170, 54, 54); /* Color del texto */
+  background-color: rgb(173, 35, 35); /* Color del texto */
 
   display: flex; /* Utiliza flexbox para centrar el contenido */
   align-items: center; /* Centra verticalmente */
   gap: 8px; /* Espaciado entre el icono y el texto */
-  padding: 5px 10px; /* Espaciado dentro del botón */
+  padding: auto; /* Espaciado dentro del botón */
   border: none; /* Opcional: Elimina el borde del botón */
-  font-size: 16px; /* Tamaño de la fuente */
+  font-size: 15px; /* Tamaño de la fuente */
   cursor: pointer; /* Cursor de puntero */
   border-radius: 10px; /* Borde redondeado */
   transition: background-color 0.3s ease; /* Transición para el efecto hover */
@@ -375,10 +388,10 @@
 
 /******************* Extras *******************/
 /*spam*/
-.requerimientosError {
+/*.requerimientosError {
   color: rgb(42, 184, 148);
   margin-left: auto;
   margin-right: 0;
   font-family: 'Arial', sans-serif;
   font-size: 0.8rem;
-}
+}*/

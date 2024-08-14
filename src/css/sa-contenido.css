@@ -147,18 +147,19 @@
 
 /*Botones Agregar/modificar*/
 .botonAgreMod {
-  margin: 0.5;
+  margin: 1rem;
   width: auto; /* Establece el ancho deseado */
   height: 3rem; /* Establece la altura deseada */
   color:  rgb(255, 255, 255); /* Color de fondo del botón */
   background-color: rgb(46, 160, 189); /* Color del texto */
 
   display: flex; /* Utiliza flexbox para centrar el contenido */
+  align-content: center;
+  text-align: center;
   align-items: center; /* Centra verticalmente */
-  gap: 8px; /* Espaciado entre el icono y el texto */
-  padding: 5px 10px; /* Espaciado dentro del botón */
+  padding: auto; /* Espaciado dentro del botón */
   border: none; /* Opcional: Elimina el borde del botón */
-  font-size: 16px; /* Tamaño de la fuente */
+  font-size: 20px; /* Tamaño de la fuente */
   cursor: pointer; /* Cursor de puntero */
   border-radius: 10px; /* Borde redondeado */
   transition: background-color 0.3s ease; /* Transición para el efecto hover */

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Juego } from '../../../../interfaces/juego';
+import { JuegoService } from '../../../../services/juego.service';
 
 @Component({
   selector: 'app-lista-juego',
@@ -8,15 +9,23 @@ import { Juego } from '../../../../interfaces/juego';
 })
 export class ListaJuegoComponent implements OnInit{
 
-  listJuego: Juego[] = [
-    {id: 1, juego: 'Futbolito', precio: 5, tiempo: 'Seis partidas', disponibilidad: true},
-    {id: 2, juego: 'Billar', precio: 20, tiempo: 'Media hora', disponibilidad: false}
-  ]
+  listJuego: Juego[] = []
 
-  constructor() {}
+  constructor(private _juegoServices: JuegoService) {}
 
   ngOnInit(): void {
-    
+    this.getListJuego();
   }
 
+  getListJuego () {
+    this._juegoServices.getListJuego().subscribe((data: Juego[]) => {
+      this.listJuego = data;
+    })
+  }
+
+  deleteJuego (id: number) {
+    this._juegoServices.deleteJuego(id).subscribe(() => {
+      this.getListJuego();
+    })
+  }
 }

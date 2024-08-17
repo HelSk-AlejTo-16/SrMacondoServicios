@@ -1,14 +1,13 @@
 export interface Empleado {
     id?: number;
-    nombreCompleto?: string;
-    nombre?: string;
-    apePaterno?: string;
-    apeMaterno?: string;
-    edad?: number;
-    telefono: string;
-    email: string;
-    contrasenia?: string;
-    estado?: boolean;
-    rol: number;
-    sucursal: number
+    Emp_Nom: string;
+    Ape_Pat: string;
+    Ape_Mat: string;
+    Edad: number;
+    Emp_Telefono: string;
+    Emp_Email: string;
+    Contrasenia: string;
+    Estado: boolean;
+    IDRol: number;
+    IDSucursal: number
 }

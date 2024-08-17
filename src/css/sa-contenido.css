@@ -213,7 +213,7 @@
   width: auto; /* Establece el ancho deseado */
   height: 3rem; /* Establece la altura deseada */
   color:  rgb(255, 255, 255); /* Color de fondo del botón */
-  background-color: rgba(7, 153, 189, 0.192); /* Color del texto */
+  background-color: rgb(7, 153, 189); /* Color del texto */
 
   display: flex; /* Utiliza flexbox para centrar el contenido */
   align-items: center; /* Centra verticalmente */
@@ -229,9 +229,9 @@
     font-size: 24px; /* Tamaño del icono */
 }
 .botonGuardar:hover {
-  background-color: rgb(7, 153, 189);
+  background-color: rgb(28, 88, 103);
   color:rgb( 255, 255,255);
-  border: 0.2rem solid rgba(7, 153, 189, 0);
+  border: 0.2rem solid rgb(255, 255, 255);
   }
 
 /*Botones para editar y ver la informacion de la data*/

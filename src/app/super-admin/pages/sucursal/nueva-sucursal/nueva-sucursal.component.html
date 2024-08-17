@@ -45,6 +45,13 @@
                     </samp>
                 </div>
 
+                <div class="mb-3">
+                  <label for="Img_Suc" class="form-label">Link imagen de la sucursal</label>
+                  <input formControlName="Img_Suc" type="text" class="form-control" id="Img_Suc" placeholder="Link de la imagen">
+                  <samp *ngIf="formAddSucursal.get('Img_Suc')?.hasError('required') && formAddSucursal.get('Img_Suc')?.touched">
+                      * El campo descripción es <strong>requerido</strong>
+                  </samp>
+              </div>
 
                 <div class="grupoBotones">
                     <button [disabled]="formAddSucursal.invalid" type="submit" class="botonAgreMod">Guardar</button>

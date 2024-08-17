@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Empleado } from '../../../../interfaces/empleado';
+import { EmpleadoService } from '../../../../services/empleado.service';
 
 @Component({
   selector: 'app-lista-empleado',
@@ -9,15 +10,24 @@ import { Empleado } from '../../../../interfaces/empleado';
 export class ListaEmpleadoComponent implements OnInit{
 
   //Creamos un array para listar a los empleados
-  listEmpleado: Empleado[] = [
-    {id: 1, nombreCompleto: 'Camila Romero Juarez', telefono: '4461183428', email: 'camilarj@gmail.com', rol: 1, sucursal: 2 },
-    {id: 2, nombreCompleto: 'Rene Alvarado Mendez', telefono: '4182345678', email: 'reneam@gmail.com', rol: 4, sucursal: 2 }
-  ]
+  listEmpleado: Empleado[] = []
 
-  constructor() {}
+  constructor(private _empleadoServices: EmpleadoService) {}
 
   ngOnInit(): void {
-    
+    this.getListEmpleado();
+  }
+
+  getListEmpleado () {
+    this._empleadoServices.getListEmpleado().subscribe((data: Empleado[]) => {
+      this.listEmpleado = data;
+    })
+  }
+
+  deleteEmpleado (id: number) {
+    this._empleadoServices.deleteEmpleado(id).subscribe(() => {
+      this.getListEmpleado();
+    })
   }
 
 }

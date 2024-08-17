@@ -1,7 +1,8 @@
 export interface Juego {
     id?: number;
-    juego: string;
-    precio: number;
-    tiempo: string;
-    disponibilidad: boolean
+    Nom_Jueg: string;
+    Precio: number;
+    Tiempo: string;
+    Dispon_Jueg: boolean;
+    Img_Jueg: string;
 }

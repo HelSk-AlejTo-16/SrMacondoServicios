@@ -16,42 +16,49 @@
         </div>
         <!--Tabla-->
         <div class="contenedorTabla">
-            <table class="styled-table">
-                <thead>
-                  <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Telefono</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Rol</th>
-                    <th scope="col">Sucursal</th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of listEmpleado">
-                        <td>{{ item.id }}</td>
-                        <td>{{ item.nombreCompleto }}</td>
-                        <td>{{ item.telefono }}</td>
-                        <td>{{ item.email }}</td>
-                        <td>{{ item.rol }}</td>
-                        <td>{{ item.sucursal }}</td>
-                        <td>
-                            <button routerLink="/super-admin/empleado/ {{item.id}} " class="botonEditData">
-                                <mat-icon>edit</mat-icon>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-              </table>
-        </div>
+          <table *ngIf="listEmpleado.length > 0" class="styled-table">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Nombre completo</th>
+                  <th scope="col">Telefono</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Edad</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of listEmpleado">
+                  <td>{{ item.id }}</td>
+                  <td>{{ item.Emp_Nom }} {{ item.Ape_Pat }} {{ item.Ape_Mat }}</td>
+                  <td>{{ item.Emp_Telefono }}</td>
+                  <td>{{ item.Emp_Email }}</td>
+                  <td>{{ item.Edad }}</td>
+                  <td>{{ item.Estado ? 'Presente' : 'Ausente' }}</td>
+                  <td>
+                    <div class="contenedorUD">
+                      <button routerLink="/super-admin/empleado/{{item.id}}" class="botonEditData">
+                        <mat-icon>edit</mat-icon>
+                      </button>
+
+                      <button (click)="deleteEmpleado(item.id!)" class="botonEliminar">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <h6 *ngIf="listEmpleado.length == 0">Upps! No hay sucursales para mostrar</h6>
+      </div>
         <div>
             <button class="botonesAgregar" routerLink="/super-admin/nuevo-empleado">
                 Agregar Empleado
             </button>
         </div>
     </div>
-    
+
 </div>
 <div>
     <p>Empleados</p>

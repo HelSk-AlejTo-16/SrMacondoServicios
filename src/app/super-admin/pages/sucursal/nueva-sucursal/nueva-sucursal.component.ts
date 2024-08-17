@@ -17,8 +17,8 @@ export class NuevaSucursalComponent implements OnInit {
   operacion: string = 'Agregar ';
 
 
-  constructor( private fb: FormBuilder, 
-    private _sucursalService: SucursalService, 
+  constructor( private fb: FormBuilder,
+    private _sucursalService: SucursalService,
     private router: Router,
     private aRoute: ActivatedRoute) {
 
@@ -27,6 +27,7 @@ export class NuevaSucursalComponent implements OnInit {
       Nom_Suc: ['', [Validators.required, Validators.maxLength(30)]],
       Loc_Suc: ['', [Validators.required, Validators.maxLength(60)]],
       Des_Suc: ['', [Validators.required, Validators.maxLength(300)]],
+      Img_Suc: ['', [Validators.required, Validators.maxLength(300)]],
     })
     this.id = Number(aRoute.snapshot.paramMap.get('id'));
   }
@@ -47,6 +48,7 @@ export class NuevaSucursalComponent implements OnInit {
         Nom_Suc: data.Nom_Suc,
         Loc_Suc: data.Loc_Suc,
         Des_Suc: data.Des_Suc,
+        Img_Suc: data.Img_Suc
       })
     })
   }
@@ -55,7 +57,8 @@ export class NuevaSucursalComponent implements OnInit {
     const sucursal: Sucursal = {
       Nom_Suc: this.formAddSucursal.value.Nom_Suc,
       Loc_Suc: this.formAddSucursal.value.Loc_Suc,
-      Des_Suc: this.formAddSucursal.value.Des_Suc
+      Des_Suc: this.formAddSucursal.value.Des_Suc,
+      Img_Suc: this.formAddSucursal.value.Img_Suc
     }
 
     if(this.id !==0 ){
@@ -73,7 +76,7 @@ export class NuevaSucursalComponent implements OnInit {
       })
     }
 
-    
+
   }
 
 }

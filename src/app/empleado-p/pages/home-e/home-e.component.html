@@ -12,128 +12,36 @@
         <!--Titulo del apartado-->
         <div class="encabezados">
             <h1 class="Examiner">Bienvenido!</h1>
-       
+        </div> <!--Encabezados-->
+        <div>
             <h5 class="balsamiq-sans-regular">Puestos</h5>
-            <!--Agrupacion de tarjetas que muestran a los productos-->
-            <div class="contenedorCard">
-                <!--Producto 1-->
-                <div class="card">
-                    
-                    <img src="https://media.gettyimages.com/id/1394690884/es/foto/food-truck-taquer%C3%ADa.jpg?s=612x612&w=gi&k=20&c=GCvY_4EHB3gHqPNRZam8Z1HH74Bil6u3TrnUsEauDtA=" class="card-img-top card-image" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Puesto de Tacos</h5>
-                     
-                    </div>
-                    
-                </div>
-
-                <!--Producto 2-->
-                <div class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ0bf3oIvtQuE5Pm94Q1vs6pFZF8tgo1-fCw&s" class="card-img-top card-image" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Puesto de Burritos</h5>
-                     
-                    </div>
-                    
-                </div>
-
-                <!--Producto 3-->
-                <div class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwlun8TZggGi7cE0SWqTuwYMrtDTfBLJkM5Q&s" class="card-img-top card-image"  alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Puesto de Pizzas</h5>
-                      
-                    </div>
-                    
-                </div>
-
-                
-            </div>
-
-            <div>        
-            </div>
-
-        </div>
-
-        <div class="separador"></div>
-
-        <div class="encabezados">
-           
-       
            
             <!--Agrupacion de tarjetas que muestran a los productos-->
             <div class="contenedorCard">
-                 <!--Grupo de Alimentos de la tienda-->
-              
-                <!--Producto 4-->
-                <div class="card">
-              <img src="https://www.elsoldesinaloa.com.mx/local/458cih-abarrotes/ALTERNATES/LANDSCAPE_1140/abarrotes" class="card-img-top card-image" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Tienda</h5>
-               
-              </div>
-            
-            </div>
-
-            <div class="card">
-              <img src="https://www.elsoldeleon.com.mx/incoming/1mpvtn-gorditas-michoacanas-las-monarcas-8.jpg/ALTERNATES/FREE_768/gorditas%20michoacanas%20%E2%80%9CLas%20Monarcas%E2%80%9D%20(8).JPG" class="card-img-top card-image" alt="...">
-              <div class="card-body">
-                <h5 class="card-title"> Puesto Gorditas </h5>
-               
-              </div>
-              
-            
-          </div>
-          <div class="card">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkCv6RKMVKjNtBHTBlUjUYbGt9At3Bu8lYOA&s" class="card-img-top card-image" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Cafeteria</h5>
-               
-              </div>
-  
-          </div>
-        </div>
-            <div>        
-            </div>
-
-        </div>
-       
-
-        <div class="separador"></div>
-
-        <div class="encabezados">
+                <!--Producto 1-->     
+            <div class="card" *ngFor="let sucursal of ListSucursal">
+                <img [src]="sucursal | sucursalImage" [alt]="sucursal.Nom_Suc"
+                [ngStyle]="{ 'width': '90%', 
+                    'height': 'auto',
+                    'max-height': '9rem',
+                    'object-fit': 'cover',
+                   'margin': '10px'}">
+                <div class="card-body">
+                  <h5 class="card-title">{{sucursal.Nom_Suc}}</h5>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary"> Dirección: {{sucursal.Loc_Suc}}</small>
+                </div>
+            </div> <!--card-->
            
+                    
+                </div>     <!--ContenedorCard-->
+               </div><!--Contenedor Productos-->
        
-           
-            <!--Agrupacion de tarjetas que muestran a los productos-->
-            <div class="contenedorCard">
-                 <!--Grupo de Alimentos de la tienda-->
-              
                
-              
-            
-          
-          
-               
-              
-          
-          <div class="card">
-            <img src="https://imagenes.eltiempo.com/files/image_1200_600/uploads/2023/02/22/63f6e929c1004.jpeg" class="card-img-top card-image" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Juegos</h5>
-             
-            </div>
 
-        </div>
-            </div>
-
-            <div>        
-            </div>
-
-        </div>
-       
-    </div>
-    
+          </div> <!--contenedorTienda-->
+        
     <!--Apartado lateral donde se estan los botones de acceder a las paginas: acerca de, notificame-->
     <div class="contenedorLateral">
         <div class="backgroundTiendaLateral">
@@ -154,6 +62,10 @@
                 <br>
                 <br>
                 <br>
+                <button class="botonLateral" routerLink="/empleado-p/ventas-e">
+                  <mat-icon>shopping_cart_checkout</mat-icon>
+                  Ventas
+              </button>
                 
                 <button class="botonLateral" routerLink="/empleado-p/sucursales-e">
                     <mat-icon>restaurant_menu</mat-icon>
@@ -176,7 +88,7 @@
             </div>
         </div>
     </div>
-</div>
+  </div>
 <!--Modales-->
 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -224,7 +136,39 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            ....
+
+
+          <div class="contenedorTabla">
+            <table *ngIf="ListNotas.length > 0" class="styled-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Remitente</th>
+                    <th scope="col">Nota</th>
+                    
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr *ngFor="let item of ListNotas">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.Remi_Nota }}</td>
+                    <td>{{ item.Nota_Glob}}</td>
+                   
+                    <td>
+                      <div class="contenedorUD">
+
+                        <button (click)="deleteNota(item.id!)" class="botonEliminar">
+                          <mat-icon>check</mat-icon>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <h6 *ngIf="ListNotas.length == 0">Upps! No hay Notas para mostrar</h6>
+        </div>
+        <div>
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-success" data-bs-dismiss="modal">Aceptar</button>

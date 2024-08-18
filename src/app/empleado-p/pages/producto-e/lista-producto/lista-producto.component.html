@@ -1,7 +1,8 @@
 <!--<p>lista-juego works!</p>-->
+
 <link rel="stylesheet" href="../../../../../css/sa-contenido.css">
 
-<div clss="principalContenedor">
+<div clss="principalContenedor" >
     <!--Fondo de color-->
     <div class="fondoSA">
         <!--Titulo-->
@@ -15,8 +16,9 @@
             </div>
         </div>
         <!--Tabla-->
-        <div class="contenedorTabla">
-            <table class="styled-table">
+       
+        <div class="contenedorTabla" >
+            <table *ngIf="ListProducto.length > 0" class="styled-table">
                 <thead>
                   <tr>
                     <th scope="col">Identificador</th>
@@ -28,77 +30,36 @@
                     <th scope="col">Descuento Producto</th>
                     <th scope="col">Sucursal</th>
                     <th scope="col">Distribuidor</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">SJ001</th>
-                    <td>Billar</td>
-                    <td>10000</td>
-                    <td>$15 por 15min</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
+                  <tr *ngFor="let item of ListProducto">
+                    <td>{{item.id}}</td>
+                    <td>{{ item.Nom_Prod }}</td>
+                    <td>{{item.Tipo_Prod}}</td>
+                    <td>{{ item.Exist_Prod}}</td>
+                    <td>{{ item.Cant_Prod}}</td>
+                    <td>{{item.Prec_Prod | currency}}</td>
+                    <td>{{item.Desc_Prod}}</td>
+                    <td>{{item.IDSucursal}}</td>
+                    <td>{{item.IDDistribuidor}}</td>
+                    <td><button type="button" class="btn btn-primary btn-success btn-sm" routerLink="/empleado-p/edit/{{item.id}}"><mat-icon>edit</mat-icon></button></td>
+                    <td><button (click)="deleteProduct(item.id!)"  type="button" class="btn btn-primary btn-danger btn-sm " ><mat-icon>delete</mat-icon></button></td>
                   </tr>
-                  <tr>
-                    <td scope="row">SJ003</td>
-                    <td>Air Hockey</td>
-                    <td>$1800</td>
-                    <td>$40 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">SJ004</td>
-                    <td>Pinball</td>
-                    <td>$1500</td>
-                    <td>$60 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                    
-                  </tr>
-                  <tr>
-                    <td scope="row">S006</td>
-                    <td>Ping Pong</td>
-                    <td>$700</td>
-                    <td>$35 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">S007</td>
-                    <td>Arcade Retro</td>
-                    <td>$900</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                    <td>$45 por hora</td>
-                  </tr>
+                 
                 </tbody>
               </table>
+              <h6 *ngIf="ListProducto.length == 0"> Upps! No hay Productos para mostrar</h6>
         </div>
         <div>
-            <button class="botonesAgregar" routerLink="/empleado-p/crear-producto-e">
+            <button class="botonesAgregar" routerLink="/empleado-p/add">
                 Agregar Producto
             </button>
         </div>
     </div>
     
 </div>
-<div>
-    <p>juegos</p>
-</div>
+
 

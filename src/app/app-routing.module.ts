@@ -6,15 +6,15 @@ import { Error404Component } from './componentes/error404/error404.component';
 const routes: Routes = [
   {
     path:'super-admin',
-    loadChildren:() => import('./super-admin/super-admin.module').then(m => m.SuperAdminModule), 
+    loadChildren:() => import('./super-admin/super-admin.module').then(m => m.SuperAdminModule),
   },
   {
     path:'sr-macondo',
-    loadChildren:() => import('./home/home.module').then(m => m.HomeModule), 
+    loadChildren:() => import('./home/home.module').then(m => m.HomeModule),
     //component: HomeModule
   },
   {
-    path:'empleado-p',
+    path:'empleado',
     loadChildren:() => import('./empleado-p/empleado-p.module').then(m => m.EmpleadoPModule)
     //component: HomeModule
   },

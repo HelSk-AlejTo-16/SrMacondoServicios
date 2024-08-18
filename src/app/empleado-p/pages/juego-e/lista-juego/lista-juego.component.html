@@ -16,54 +16,42 @@
         </div>
         <!--Tabla-->
         <div class="contenedorTabla">
-            <table class="styled-table">
+          
+            <table *ngIf="listJuego.length > 0" class="styled-table">
                 <thead>
                   <tr>
-                    <th scope="col">Identificador</th>
+                    <th scope="col">ID</th>
                     <th scope="col">Juego</th>
-                    <th scope="col">Costo</th>
-                    <th scope="col">Precio de renta</th>
+                    <th scope="col">Precio en pesos</th>
+                    <th scope="col">Tiempo de renta</th>
+                    <th scope="col">Disponibilidad</th>
+                    <th scope="col"></th>
+                   
                   </tr>
                 </thead>
+
                 <tbody>
-                  <tr>
-                    <th scope="row">SJ001</th>
-                    <td>Billar</td>
-                    <td>10000</td>
-                    <td>$15 por 15min</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">SJ003</td>
-                    <td>Air Hockey</td>
-                    <td>$1800</td>
-                    <td>$40 por hora</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">SJ004</td>
-                    <td>Pinball</td>
-                    <td>$1500</td>
-                    <td>$60 por hora</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">S006</td>
-                    <td>Ping Pong</td>
-                    <td>$700</td>
-                    <td>$35 por hora</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">S007</td>
-                    <td>Arcade Retro</td>
-                    <td>$900</td>
-                    <td>$45 por hora</td>
+                  <tr *ngFor="let item of listJuego">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.Nom_Jueg }}</td>
+                    <td>{{ item.Precio }}</td>
+                    <td>{{ item.Tiempo }}</td>
+                    <td>{{ item.Dispon_Jueg? 'Disponible' : 'No Disponible' }}</td>
+                    <td><div class="contenedorUD">
+                      <button routerLink="/empleado-p/juego-e/{{item.id}}" class="botonEditData">
+                        <mat-icon>edit</mat-icon>
+                      </button>
+                      </div>
+                    </td>
+                  
                   </tr>
                 </tbody>
               </table>
+              <h6 *ngIf="listJuego.length == 0">Upps! No hay sucursales para mostrar</h6>
         </div>
-        <div>
-           
-        </div>
+        
     </div>
-    
+
 </div>
 <div>
     <p>juegos</p>

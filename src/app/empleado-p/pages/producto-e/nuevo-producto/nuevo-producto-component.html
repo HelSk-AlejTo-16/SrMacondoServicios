@@ -5,7 +5,7 @@
     <!--Fondo de color-->
     <div class="fondoSA">
         <!--Titulo-->
-        <h1 class="Examiner"> Agregar Sucursal</h1>
+        
         <!--Botones de navegacion-->
         <div class="contenedorBotones">
             <div class="grupoBotones">
@@ -18,44 +18,81 @@
             </div>
         </div>
         <!--Contenedor del formulario-->
-        <div class="contenedorInfo">
-            <h3 >Agregar Productos</h3>
-            <div class="mb-3">
-                <label for="juego" class="form-label">Nombre del producto</label>
-                <input type="text" class="form-control" id="Nom_Prod" placeholder="Ingresa el nombre del Producto">
-            <div class="mb-3">
-                <label for="costo" class="form-label">Tipo de Producto</label>
-                <input type="text" class="form-control" id="Tipo_prod" placeholder="Tipo de Producto">
+        
+             <div class="contenedorInfo">
+                <form [formGroup]="form" (ngSubmit)="addProducto()">
+            
+                    <h3 >{{operation}} Productos</h3>
+                    <div class="mb-3">
+                        <label class="form-label">Nombre del producto</label>
+                        <input formControlName="Nom_Prod" type="text" class="form-control"  placeholder="Ingresa el nombre del Producto">
+                        <span *ngIf="form.get('Nom_Prod')?.hasError('required') && form.get('Nom_Prod')?.touched">El Campo del nombre del producto  <strong>Es requerido</strong></span>
+                    <div class="mb-3">
+                        <label class="form-label">Tipo de Producto</label>
+                        <select formControlName="Tipo_Prod" class="selectorSA">
+                            <option value="" disabled>Seleccione un Producto</option>
+                            <option *ngFor="let items of tproductos" [value]="items.id">{{items.Tipo_Prod}}</option>
+                            </select>
+                        
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Imagen del producto</label>
+                        <input formControlName="Link_img" type="text" class="form-control"  placeholder="Imagen">
+                        <span *ngIf="form.get('Link_img')?.hasError('required')&& form.get('Link_img')?.touched " >El Campo del Tipo  <strong>Es requerido</strong></span>
+                    </div>
+                    <div class="mb-3">
+                        <label  class="form-label">Existencia del Producto</label>
+                        <input formControlName="Exist_Prod" type="number" class="form-control"  placeholder="Existencia del producto">
+                        <span *ngIf="form.get('Exist_Prod')?.hasError('required') && form.get('Exist_Prod')?.touched">El Campo de las existencias <strong>Es requerido</strong></span>
+                    </div>
+                    <div class="mb-3">
+                        <label  class="form-label">Cantidad Producto</label>
+                        <input formControlName="Cant_Prod" type="number" class="form-control"  placeholder="Existencia del producto">
+                        <span *ngIf="form.get('Cant_Prod')?.hasError('required')&& form.get('Cant_Prod')?.touched">El Campo de la cantidad del producto  <strong>Es requerido</strong></span>
+                    </div>
+                    <div class="mb-3">
+                        <label  class="form-label">Precio Producto</label>
+                        <input formControlName="Prec_Prod" type="number" class="form-control" placeholder="Precio del producto">
+                        <span *ngIf="form.get('Prec_Prod')?.hasError('required')&& form.get('Prec_Prod')?.touched">El Campo del precio  <strong>Es requerido</strong></span>
+                    </div>
+                    <div class="mb-3">
+                        <label  class="form-label">Descuento Producto</label>
+                        <input formControlName="Desc_Prod" type="number" class="form-control"  placeholder="Descuento del producto">
+                        <span *ngIf="form.get('Desc_Prod')?.hasError('required')&& form.get('Desc_Prod')?.touched">El Campo del descuento <strong>Es requerido</strong></span>
+                    </div>
+                    <div class="mb-3">
+                        <label  class="form-label">idSucursal</label>
+                        <select formControlName="IDSucursal" class="selectorSA">
+                            <option value="" disabled>Selecione una sucursal</option>
+                            <option *ngFor="let item of sucursales" [value]="item.id">{{item.Nom_Suc}}</option>
+                            <!--<option *ngFor="let sucursal of sucursales" [value]="sucursal.id">{{sucursal.sucursal}}</option>-->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label  class="form-label">idSucursal</label>
+                        <select formControlName="IDDistribuidor" class="selectorSA">
+                            <option value="" disabled>Selecione un distribuidor</option>
+                            <option *ngFor="let item of distribuidores" [value]="item.id">{{item.Nom_Distr}}</option>
+                            <!--<option *ngFor="let sucursal of sucursales" [value]="sucursal.id">{{sucursal.sucursal}}</option>-->
+                        </select>
+                    </div>
+                
+        
             </div>
-            <div class="mb-3">
-                <label for="renta" class="form-label">Existencia del Producto</label>
-                <input type="text" class="form-control" id="Exist_Prod" placeholder="Existencia del producto">
-            </div>
-            <div class="mb-3">
-                <label for="renta" class="form-label">Cantidad Producto</label>
-                <input type="text" class="form-control" id="Exist_Prod" placeholder="Existencia del producto">
-            </div>
-            <div class="mb-3">
-                <label for="renta" class="form-label">Precio Producto</label>
-                <input type="text" class="form-control" id="Precio_Prod" placeholder="Precio del producto">
-            </div>
-            <div class="mb-3">
-                <label for="renta" class="form-label">Descuento Producto</label>
-                <input type="text" class="form-control" id="Desc_Prod" placeholder="Descuento del producto">
-            </div>
-        </div>
+        
+        
+        
+   
         <!--Botones para guardar la informacion del empleado-->
         <div class="contenedorBotones">
             <div class="grupoBotones">
-                <button class="botonAgreMod">
+                <button [disabled]="form.invalid" type="submit"class="botonAgreMod">
                     <mat-icon>add</mat-icon>
                     Agregar
                 </button>
             </div>
         </div>
+    </form>
     </div>
-    
 </div>
-<div>
-    <p>Sucursales</p>
-</div>
+  </div>

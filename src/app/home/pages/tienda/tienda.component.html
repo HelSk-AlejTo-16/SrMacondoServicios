@@ -18,53 +18,23 @@
             <!--Agrupacion de tarjetas que muestran a los productos-->
             <div class="contenedorCard">
                 <!--Producto 1-->
-                <div class="card">
-                    <img src="https://th.bing.com/th/id/OIP.yrZ8ghNH5pKPEfKYbWaVvwHaFj?rs=1&pid=ImgDetMain" class="card-img-top card-image" alt="...">
+                <div class="card" *ngFor="let producto of ListProducto">
+                    <img [src]="producto | productoImage" [alt]="producto.Nom_Prod"
+                    [ngStyle]="{ 'width': '90%', 
+                        'height': 'auto',
+                        'max-height': '9rem',
+                        'object-fit': 'cover',
+                       'margin': '10px'}">
                     <div class="card-body">
-                      <h5 class="card-title">Gansito</h5>
-                      <p class="card-text"> Precio: $20</p>
+                      <h5 class="card-title">{{producto.Nom_Prod}}</h5>
+                      <p class="card-text">Precio: ${{producto.Prec_Prod}}</p>
                     </div>
                     <div class="card-footer">
-                      <small class="text-body-secondary">Existencias: 24</small>
+                      <small class="text-body-secondary">Existencias: {{producto.Exist_Prod}}</small>
                     </div>
                 </div>
+                
 
-                <!--Producto 2-->
-                <div class="card">
-                    <img src="https://th.bing.com/th/id/OIP.82u2MKYwCondJKZZ6p7mfQAAAA?rs=1&pid=ImgDetMain" class="card-img-top card-image" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Doritos Dinamita</h5>
-                      <p class="card-text">Precio: $20</p>
-                    </div>
-                    <div class="card-footer">
-                      <small class="text-body-secondary">Existencias: 12</small>
-                    </div>
-                </div>
-
-                <!--Producto 3-->
-                <div class="card">
-                    <img src="https://1.bp.blogspot.com/-UHazaeh-XSU/U5fUm3-YAhI/AAAAAAAAAf8/hpSu2p2NNrY/s1600/SAM_4316.JPG" class="card-img-top card-image" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Crackets</h5>
-                      <p class="card-text">Precio: $18</p>
-                    </div>
-                    <div class="card-footer">
-                      <small class="text-body-secondary">Existencias: 6</small>
-                    </div>
-                </div>
-
-                <!--Producto 4-->
-                <div class="card">
-                    <img src="https://th.bing.com/th/id/R.cfe4821823f8797b60fbe4d07e776539?rik=0fijP3nqGo4Uiw&pid=ImgRaw&r=0" class="card-img-top card-image" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Paletas de hielo</h5>
-                      <p class="card-text">Precio: $15</p>
-                    </div>
-                    <div class="card-footer">
-                      <small class="text-body-secondary">Existencias: 42</small>
-                    </div>
-                </div>
-            </div>
 
             <div>
                 <button class="botonVerMas" routerLink="/sr-macondo/lista">
@@ -78,10 +48,23 @@
         <div class="separador"></div>
 
         <!--Grupo de Alimentos de la tienda-->
-        <div>
-            <h5 class="balsamiq-sans-regular">Alimentos</h5>
-            
-
+        <h5 class="balsamiq-sans-regular">Sucursales</h5>
+        <div class="contenedorCard">
+            <div class="card" *ngFor="let sucursal of ListSucursal">
+                <img [src]="sucursal | sucursalImage2" [alt]="sucursal.Nom_Suc"
+                [ngStyle]="{ 'width': '90%', 
+                    'height': 'auto',
+                    'max-height': '9rem',
+                    'object-fit': 'cover',
+                   'margin': '10px'}">
+                <div class="card-body">
+                  <h5 class="card-title">{{sucursal.Nom_Suc}}</h5>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary"> Dirección: {{sucursal.Loc_Suc}}</small>
+                </div>
+            </div>
+           
             <div>
                 <button class="botonVerMas" routerLink="/sr-macondo/lista">
                     <mat-icon>more_vert</mat-icon>
@@ -96,7 +79,24 @@
         <!--Grupo de juegos de la tienda-->
         <div>
             <h5 class="balsamiq-sans-regular">Juegos</h5>
-            
+            <div class="contenedorCard">
+                <div class="card" *ngFor="let juego of ListJuego">
+                    <img [src]="juego | JuegoImage" [alt]="juego.Nom_Jueg"
+                    [ngStyle]="{ 'width': '90%', 
+                        'height': 'auto',
+                        'max-height': '9rem',
+                        'object-fit': 'cover',
+                       'margin': '10px'}">
+                    <div class="card-body">
+                      <h5 class="card-title">{{juego.Nom_Jueg}}</h5>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary"> ${{juego.Precio}}</small>
+                    </div>
+                </div>
+               
+    
+            </div>
 
             <div>
                 <button class="botonVerMas" routerLink="/sr-macondo/lista">
@@ -108,7 +108,8 @@
         </div>
 
     </div>
-    
+</div>
+
     <!--Apartado lateral donde se estan los botones de acceder a las paginas: acerca de, notificame-->
     <div class="contenedorLateral">
         <div class="backgroundTiendaLateral">
@@ -130,4 +131,5 @@
         </div>
     </div>
 </div>
+
 

@@ -4,6 +4,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { SucursalService } from '../../../../services/sucursal.service';
 import { Sucursal } from '../../../../interfaces/sucursal';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { HttpErrorResponse } from '@angular/common/http';
+import { ErrorService } from '../../../../services/error.service';
 
 
 @Component({
@@ -16,11 +19,12 @@ export class NuevaSucursalComponent implements OnInit {
   id: number;
   operacion: string = 'Agregar ';
 
-
   constructor( private fb: FormBuilder,
     private _sucursalService: SucursalService,
     private router: Router,
-    private aRoute: ActivatedRoute) {
+    private aRoute: ActivatedRoute,
+    private toastr: ToastrService,
+    private _errorService: ErrorService) {
 
     this.formAddSucursal = this.fb.group({
       id: [0],
@@ -50,6 +54,10 @@ export class NuevaSucursalComponent implements OnInit {
         Des_Suc: data.Des_Suc,
         Img_Suc: data.Img_Suc
       })
+    }, (error: HttpErrorResponse) => {
+      console.error('Error:', error);
+      this._errorService.msgError(error);
+      // Manejar error: mostrar mensaje de error, etc.
     })
   }
 
@@ -64,15 +72,22 @@ export class NuevaSucursalComponent implements OnInit {
     if(this.id !==0 ){
       //Es editar
       this._sucursalService.updateSucursal(this.id, sucursal).subscribe(() => {
+        this.toastr.success('Sucursal actualizada correctamente', 'Actualizado')
         this.router.navigate(['/super-admin/sucursales'])
+      }, (error: HttpErrorResponse) => {
+        console.error('Error:', error);
+        this._errorService.msgError(error);
+        // Manejar error: mostrar mensaje de error, etc.
       })
     } else {
       //Es agregar
       this._sucursalService.saveSucursal(sucursal).subscribe(() => {
+        this.toastr.success('Sucursal agregada correctamente', 'Agregado')
         this.router.navigate(['/super-admin/sucursales'])
-      }, (error) => {
-        console.log('Error'),
-        console.log(error)
+      }, (error: HttpErrorResponse) => {
+        console.error('Error:', error);
+        this._errorService.msgError(error);
+        // Manejar error: mostrar mensaje de error, etc.
       })
     }
 

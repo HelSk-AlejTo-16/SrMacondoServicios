@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { JuegoService } from '../../../../services/juego.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Juego } from '../../../../interfaces/juego';
+import { ToastrService } from 'ngx-toastr';
+import { ErrorService } from '../../../../services/error.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-nuevo-juego',
@@ -18,13 +21,15 @@ export class NuevoJuegoComponent implements OnInit{
   constructor( private fb: FormBuilder,
     private router: Router,
     private aRoute: ActivatedRoute,
-    private _juegoService: JuegoService
+    private _juegoService: JuegoService,
+    private toastr: ToastrService,
+    private _errorService: ErrorService
     ) {
     this.formAddJuego = this.fb.group({
       id: [0],
       Nom_Jueg: ['', [Validators.required, Validators.maxLength(30)]],
-      Precio: [null, [Validators.required, Validators.maxLength(60)]],
-      Tiempo: ['', [Validators.required, Validators.maxLength(300)]],
+      Precio: [null, [Validators.required]],
+      Tiempo: ['', [Validators.required, Validators.maxLength(30)]],
       Dispon_Jueg: ['', Validators.required],
       Img_Jueg: ['', [Validators.required, Validators.maxLength(300)]],
     })
@@ -50,6 +55,10 @@ export class NuevoJuegoComponent implements OnInit{
         Dispon_Jueg: data.Dispon_Jueg,
         Img_Jueg: data.Img_Jueg
       })
+    }, (error: HttpErrorResponse) => {
+      console.error('Error', error);
+      this._errorService.msgError(error);
+      // Manejar error: mostrar mensaje de error, etc.
     })
   }
 
@@ -65,15 +74,22 @@ export class NuevoJuegoComponent implements OnInit{
     if(this.id !==0 ){
       //Es editar
       this._juegoService.updateJuego(this.id, juego).subscribe(() => {
+        this.toastr.success('Juego actualizado correctamente', 'Actualizado')
         this.router.navigate(['/super-admin/juegos'])
+      }, (error: HttpErrorResponse) => {
+        console.error('Error:', error);
+        this._errorService.msgError(error);
+        // Manejar error: mostrar mensaje de error, etc.
       })
     } else {
       //Es agregar
       this._juegoService.saveJuego(juego).subscribe(() => {
+        this.toastr.success('Juego agregado correctamente', 'Agregado')
         this.router.navigate(['/super-admin/juegos'])
-      }, (error: any) => {
-        console.log('Error'),
-        console.log(error)
+      }, (error: HttpErrorResponse) => {
+        console.error('Error:', error);
+        this._errorService.msgError(error);
+        // Manejar error: mostrar mensaje de error, etc.
       })
     }
   }

@@ -17,7 +17,7 @@ const routes: Routes = [
     path: '',
     component:LayoutPagesComponent,
     children: [
-    
+
     {path:'home-e',component:HomeEComponent},
     {
       path: 'juegos-e',component:ListaJuegoComponent
@@ -45,7 +45,7 @@ const routes: Routes = [
       redirectTo: 'home-e',
       pathMatch: 'full'
     }
-  
+
     //path 'crearventa/:idv, component:CrearVentaComponent'
     //Uso para la base de datos(?)
     //path: ':idv', component: ventaComponent

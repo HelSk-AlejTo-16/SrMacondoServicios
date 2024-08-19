@@ -24,7 +24,7 @@ export class NuevoProductoComponent implements OnInit {
   tproductos: any[] = [];
   sucursales: any[] = [];
   distribuidores: any[]=[];
-  
+
 
   constructor(private fb: FormBuilder,
     private _productoService: ProductoService,
@@ -34,7 +34,7 @@ export class NuevoProductoComponent implements OnInit {
     private _serviceTipoProds: Tip_prodsService,
     private _sucursalService: SucursalService,
     private _distribuidorsService: distribuidorsService
-  ) { 
+  ) {
     this.form = this.fb.group({
       Nom_Prod:['',[Validators.required,Validators.maxLength(15)]],
       Tipo_Prod:['',[Validators.required]],
@@ -48,7 +48,7 @@ export class NuevoProductoComponent implements OnInit {
     })
     this.id=String(aRouter.snapshot.paramMap.get('id'))
    console.log(aRouter.snapshot.paramMap.get('id'))
-   
+
   }
   ngOnInit(): void {
      if(this.id !="null"){
@@ -63,13 +63,13 @@ export class NuevoProductoComponent implements OnInit {
   getdistribuidors(){
     this._distribuidorsService.getdistribuidors().subscribe((data: distribuidors[]) => {
       this.distribuidores = data;
-  
+
     })
   }
   getTip_prodss(){
     this._serviceTipoProds.getTip_prodss().subscribe((data: tip_prods[]) => {
       this.tproductos = data;
-  
+
     })
   }
   getListSucursal () {
@@ -94,7 +94,7 @@ this._productoService.getProduct(id).subscribe((data:Producto) => {
 })
   }
   addProducto(){
-    
+
 
     const producto :Producto = {
       Nom_Prod: this.form.value.Nom_Prod,
@@ -107,7 +107,7 @@ this._productoService.getProduct(id).subscribe((data:Producto) => {
       IDSucursal: this.form.value.IDSucursal,
       IDDistribuidor: this.form.value.IDDistribuidor
 
-      
+
     }
     if(this.id !="null"){
       this._productoService.updateProduct(this.id,producto).subscribe(() =>{
@@ -115,22 +115,22 @@ this._productoService.getProduct(id).subscribe((data:Producto) => {
         this._snackBar.open('Producto actualizado con exito', 'Cerrar',{
           duration:3000,
         });
-        this.router.navigate(['/empleado-p/productos-e']);
+        this.router.navigate(['/empleado/productos-e']);
       }
       )
 
     }else{
       //agregar
       this._productoService.saveProduct(producto).subscribe(()=>{
-        
+
         this._snackBar.open('Producto agregado con exito','Cerrar',{
           duration:3000,
         });
-        this.router.navigate(['/empleado-p/productos-e']);
+        this.router.navigate(['/empleado/productos-e']);
       })
     }
-    
+
   }
-  
+
 }
 

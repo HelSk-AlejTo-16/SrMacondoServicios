@@ -38,4 +38,8 @@ export class EmpleadoService {
     return this.http.put<void>(`${this.myAppUrl}${this.myApiUrl}${id}`, empleado);
   }
 
+  updateEstadoEmpleado(id: number, estado: boolean): Observable<any> {
+    return this.http.put(`${this.myAppUrl}${this.myApiUrl}${id}/estado`, { estado });
+  }
+
 }

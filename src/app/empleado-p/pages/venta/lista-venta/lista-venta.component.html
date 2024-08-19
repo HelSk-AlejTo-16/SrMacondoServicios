@@ -10,13 +10,13 @@
         <!--Botones de navegacion-->
         <div class="contenedorBotones">
             <div class="grupoBotones">
-                <button class="botonNavegacion" routerLink="/empleado-p/home-e">
+                <button class="botonNavegacion" routerLink="/empleado/home-e">
                     <mat-icon>home</mat-icon>
                 </button>
             </div>
         </div>
         <!--Tabla-->
-       
+
         <div class="contenedorTabla" >
             <table class="styled-table" *ngIf="ListVenta.length > 0">
                 <thead>
@@ -25,7 +25,7 @@
                     <th scope="col">Cantidad Vendida</th>
                     <th scope="col">TotalVendido</th>
                     <th scope="col">IDProducto</th>
-                  
+
                     <th scope="col"></th>
                     <th scope="col"></th>
                   </tr>
@@ -36,22 +36,22 @@
                     <td>{{ item.Cant_vent }}</td>
                     <td>{{item.TotalVent}}</td>
                     <td>{{ item.IDProducto}}</td>
-               
+
                     <td><button type="button" class="btn btn-primary btn-success btn-sm" routerLink="/empleado-p/venta-e-edit/{{item.id}}"><mat-icon>edit</mat-icon></button></td>
                     <td><button (click)="deleteVentas(item.id!)"  type="button" class="btn btn-primary btn-danger btn-sm " ><mat-icon>delete</mat-icon></button></td>
                   </tr>
-                 
+
                 </tbody>
               </table>
               <h6 *ngIf="ListVenta.length == 0">Upps! No hay Ventas para mostrar</h6>
         </div>
         <div>
-            <button class="botonesAgregar" routerLink="/empleado-p/venta-e">
+            <button class="botonesAgregar" routerLink="/empleado/venta-e">
                 Agregar Venta
             </button>
         </div>
     </div>
-    
+
 </div>
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Empleado } from '../../../../interfaces/empleado';
 import { EmpleadoService } from '../../../../services/empleado.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-lista-empleado',
@@ -12,7 +13,7 @@ export class ListaEmpleadoComponent implements OnInit{
   //Creamos un array para listar a los empleados
   listEmpleado: Empleado[] = []
 
-  constructor(private _empleadoServices: EmpleadoService) {}
+  constructor(private _empleadoServices: EmpleadoService, private toastr: ToastrService) {}
 
   ngOnInit(): void {
     this.getListEmpleado();
@@ -26,6 +27,7 @@ export class ListaEmpleadoComponent implements OnInit{
 
   deleteEmpleado (id: number) {
     this._empleadoServices.deleteEmpleado(id).subscribe(() => {
+      this.toastr.warning('El empleado ha sido eliminado con exito','Advertencia')
       this.getListEmpleado();
     })
   }

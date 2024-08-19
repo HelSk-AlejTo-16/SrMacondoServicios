@@ -23,7 +23,7 @@
           <samp *ngIf="formDato.get('Banc_Nom')?.hasError('required') && formDato.get('Banc_Nom')?.touched">
             * Se requiere el nombre del banco
           </samp>
-          <samp *ngIf="formDato.get('Banc_Nom')?.hasError('maxlength') && formDato.get('Banc_Nom')?.touched">
+          <samp *ngIf="formDato.get('Banc_Nom')?.hasError('maxlength')">
             * No debe exceder los 30 caracteres
           </samp>
         </div>
@@ -34,7 +34,7 @@
           <samp *ngIf="formDato.get('Clabe_InterBanc')?.hasError('required') && formDato.get('Clabe_InterBanc')?.touched">
             * Se requiere la clabe interbancaria
           </samp>
-          <samp *ngIf="formDato.get('Clabe_InterBanc')?.hasError('maxlength') && formDato.get('Clabe_InterBanc')?.touched">
+          <samp *ngIf="formDato.get('Clabe_InterBanc')?.hasError('maxlength')">
             * No debe exceder los 18 caracteres, deben ser numéricos sin guiones, puntos, etc.
           </samp>
         </div>
@@ -45,7 +45,7 @@
           <samp *ngIf="formDato.get('Num_Cuenta')?.hasError('required') && formDato.get('Num_Cuenta')?.touched">
             * Se requiere el número de cuenta
           </samp>
-          <samp *ngIf="formDato.get('Num_Cuenta')?.hasError('maxlength') && formDato.get('Num_Cuenta')?.touched">
+          <samp *ngIf="formDato.get('Num_Cuenta')?.hasError('maxlength')">
             * No debe exceder los 10 caracteres numéricos
           </samp>
         </div>
@@ -53,7 +53,7 @@
         <div>
           <label class="form-label">URL de la imagen del código QR:</label>
           <input formControlName="Img_QR" type="text" id="Img_QR" class="form-control" placeholder="URL de QR">
-          <samp *ngIf="formDato.get('Img_QR')?.hasError('maxlength') && formDato.get('Img_QR')?.touched">
+          <samp *ngIf="formDato.get('Img_QR')?.hasError('maxlength')">
             * No debe exceder los 300 caracteres
           </samp>
         </div>
@@ -61,7 +61,7 @@
         <div>
           <label class="form-label">Historia de la Empresa:</label>
           <textarea formControlName="Info_Empresa" type="text" id="Info_Empresa" class="form-control" placeholder=""></textarea>
-          <samp *ngIf="formDato.get('Info_Empresa')?.hasError('maxlength') && formDato.get('Info_Empresa')?.touched">
+          <samp *ngIf="formDato.get('Info_Empresa')?.hasError('maxlength')">
             * No debe exceder los 30000 caracteres
           </samp>
         </div>

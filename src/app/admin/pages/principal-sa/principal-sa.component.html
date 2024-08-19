@@ -3,9 +3,15 @@
 
 <div class="principalContenedor">
     <div class="botonContenedor">
-        <button class="botonPrincipal" routerLink="/admin/mensajes">Mesnsajes</button>
-        
+        <button class="botonPrincipal" routerLink="/admin/mensajes">Mensajes</button>
+        <button routerLink="/empleado" class="botonEmpleado">
+          Empleado
+        </button>
+        <button *ngIf="mostrarBotonRegresar" (click)="regresar()" class="botonRegresar">
+          Regresar
+        </button>
     </div>
+
 </div>
 
 

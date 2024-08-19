@@ -5,7 +5,7 @@
     <!--Fondo de color-->
     <div class="fondoSA">
         <!--Titulo-->
-        <h1 class="Examiner">Juegos</h1>
+        <h1 class="Examiner">Notas</h1>
         <!--Botones de navegacion-->
         <div class="contenedorBotones">
             <div class="grupoBotones">
@@ -22,7 +22,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">Remitente Nota</th>
                     <th scope="col">Nota</th>
-                    
+
                     <th scope="col"></th>
                   </tr>
                 </thead>
@@ -32,7 +32,7 @@
                     <td>{{ item.id }}</td>
                     <td>{{ item.Remi_Nota }}</td>
                     <td>{{ item.Nota_Glob}}</td>
-                   
+
                     <td>
                       <div class="contenedorUD">
                         <button routerLink="/admin/mensaje/{{item.id}}" class="botonEditData">

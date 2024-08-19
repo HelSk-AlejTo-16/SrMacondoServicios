@@ -29,6 +29,9 @@
                 <samp *ngIf="formAddJuego.get('Nom_Jueg')?.hasError('required') && formAddJuego.get('Nom_Jueg')?.touched">
                     * Se requiere un nombre para el <strong>juego</strong>
                 </samp>
+                <samp *ngIf="formAddJuego.get('Nom_Jueg')?.hasError('maxlength')">
+                  * No debe exceder los 30 caracteres
+                </samp>
               </div>
 
               <div class="mb-3">
@@ -45,6 +48,9 @@
                 <samp *ngIf="formAddJuego.get('Tiempo')?.hasError('required') && formAddJuego.get('Tiempo')?.touched">
                     * Se requiere un tiempo de renta para el <strong>juego</strong>
                 </samp>
+                <samp *ngIf="formAddJuego.get('Tiempo')?.hasError('maxlength')">
+                  * No debe exceder los 30 caracteres
+                </samp>
               </div>
 
               <div class="mb-3">
@@ -57,6 +63,7 @@
                 <samp *ngIf="formAddJuego.get('Dispon_Jueg')?.hasError('required') && formAddJuego.get('Dispon_Jueg')?.touched">
                     * Se requiere una disponibilidad para el <strong>juego</strong>
                 </samp>
+
             </div>
 
             <div class="mb-3">
@@ -64,6 +71,9 @@
               <input formControlName="Img_Jueg" type="text" class="form-control" id="Img_Jueg" placeholder="Link de la imagen del juego">
               <samp *ngIf="formAddJuego.get('Img_Jueg')?.hasError('required') && formAddJuego.get('Img_Jueg')?.touched">
                   * Se requiere un tiempo de renta para el <strong>juego</strong>
+              </samp>
+              <samp *ngIf="formAddJuego.get('Img_Jueg')?.hasError('maxlength')">
+                * No debe exceder los 300 caracteres
               </samp>
             </div>
 

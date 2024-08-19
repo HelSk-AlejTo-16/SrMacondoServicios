@@ -128,6 +128,24 @@
     background-color: rgb(46, 22, 7); /* Color de fondo azul más oscuro al pasar el cursor */
 }
 
+.botonRegresar {
+  padding: 1.5rem; /* Espaciado interno */
+  font-size: 2rem;
+  background-color: rgb(165, 77, 153); /* Color de fondo azul */
+  color: white; /* Color del texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+.botonRegresar mat-icon {
+  font-size: 1.5rem; /* Tamaño del icono */
+}
+
+.botonRegresar:hover {
+  background-color: rgb(88, 8, 72); /* Color de fondo azul más oscuro al pasar el cursor */
+}
+
 /*Boton de empleado y sus especificaciones*/
 .botonEmpleado {
   align-items: center;
@@ -353,7 +371,7 @@
   background-color: rgb(255, 231, 209);
 }
 .styled-table tbody tr:hover {
-  background-color: rgb(168, 112, 86); /* Cambia el color de fondo al pasar el ratón */
+  background-color: rgb(217, 136, 114); /* Cambia el color de fondo al pasar el ratón */
   color: #ffffff;
 }
 .styled-table thead {

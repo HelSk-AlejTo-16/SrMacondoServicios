@@ -17,7 +17,7 @@ export class NuevaVentaComponent implements OnInit {
   id: number;
   operation: string = 'Agregar ';
   tproductos: any[] = [];
-  
+
 
   constructor(
     private fb: FormBuilder,
@@ -42,7 +42,7 @@ export class NuevaVentaComponent implements OnInit {
       // es editar
       this.operation = 'Editar ';
       this.getVenta(this.id);
-      
+
     }
     this.getTip_prodss();
   }
@@ -77,16 +77,16 @@ export class NuevaVentaComponent implements OnInit {
         this._snackBar.open('Venta actualizada con exito', 'Cerrar',{
           duration:3000,
         });
-        this.router.navigate(['/empleado-p/ventas-e']);
+        this.router.navigate(['/empleado/ventas-e']);
       });
     } else {
       // agregar
       this._ventaService.saveVenta(venta).subscribe(() => {
-       
+
         this._snackBar.open('Venta Agregada con exito','Cerrar',{
           duration:3000,
         });
-        this.router.navigate(['/empleado-p/ventas-e']);
+        this.router.navigate(['/empleado/ventas-e']);
       });
     }
   }

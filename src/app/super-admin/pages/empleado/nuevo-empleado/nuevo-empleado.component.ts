@@ -7,6 +7,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SucursalService } from '../../../../services/sucursal.service';
 import { RolService } from '../../../../services/rol.service';
 import { Rol } from '../../../../interfaces/rol';
+import { ToastrService } from 'ngx-toastr';
+import { ErrorService } from '../../../../services/error.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-nuevo-empleado',
@@ -27,6 +30,8 @@ export class NuevoEmpleadoComponent implements OnInit {
     private _empleadoService: EmpleadoService,
     private _sucursalService: SucursalService,
     private _rolService: RolService,
+    private toastr: ToastrService,
+    private _errorService: ErrorService
     ) {
       this.formAddEmpleado = this.fb.group({
         Emp_Nom: ['', [Validators.required, Validators.maxLength(30)]],
@@ -60,12 +65,20 @@ export class NuevoEmpleadoComponent implements OnInit {
   getListRol () {
     this._rolService.getListRol().subscribe((data: Rol[]) => {
       this.roles = data;
+    }, (error: HttpErrorResponse) => {
+      console.error('Error', error);
+      this._errorService.msgError(error);
+      // Manejar error: mostrar mensaje de error, etc.
     })
   }
 
   getListSucursal () {
     this._sucursalService.getListSucursal().subscribe((data: Sucursal[]) => {
       this.sucursales = data;
+    }, (error: HttpErrorResponse) => {
+      console.error('Error', error);
+      this._errorService.msgError(error);
+      // Manejar error: mostrar mensaje de error, etc.
     })
   }
 
@@ -86,6 +99,10 @@ export class NuevoEmpleadoComponent implements OnInit {
 
       })
 
+    }, (error: HttpErrorResponse) => {
+      console.error('Error', error);
+      this._errorService.msgError(error);
+      // Manejar error: mostrar mensaje de error, etc.
     })
   }
 
@@ -107,14 +124,21 @@ export class NuevoEmpleadoComponent implements OnInit {
       //Es editar
       this._empleadoService.updateEmpleado(this.id, empleado).subscribe(() => {
         this.router.navigate(['/super-admin/empleados'])
+      }, (error: HttpErrorResponse) => {
+        console.error('Error', error);
+        this.toastr.success('Empleado actualizado correctamente', 'Actualizado')
+        this._errorService.msgError(error);
+        // Manejar error: mostrar mensaje de error, etc.
       })
     } else {
       //Es agregar
       this._empleadoService.saveEmpleado(empleado).subscribe(() => {
+        this.toastr.success('Empleado agregado correctamente', 'Agregado')
         this.router.navigate(['/super-admin/empleados'])
-      }, (error: any) => {
-        console.log('Error'),
-        console.log(error)
+      }, (error: HttpErrorResponse) => {
+        console.error('Error', error);
+        this._errorService.msgError(error);
+        // Manejar error: mostrar mensaje de error, etc.
       })
     }
   }

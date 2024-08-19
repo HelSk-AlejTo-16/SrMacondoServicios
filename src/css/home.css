@@ -25,7 +25,7 @@
     display: flex;
     height: 37rem;
     margin-top: 0.5rem;
-    
+
 }
 
 /*Contenedor de los apartados de la tienda y los productos*/
@@ -62,11 +62,11 @@
     margin-right: 2rem;
     margin-top: 2rem;
     left:5rem
-    
-    
-    
+
+
+
   }
-  
+
 
 /* Estilos para el contenedor de tarjetas */
 .contenedorCard {
@@ -279,6 +279,35 @@
     background-color: rgb(30, 83, 63);
 }
 
+
+  /*Botones laterales de tienda*/
+  .botonRegresar {
+    margin: 0.5;
+    width: 9rem; /* Establece el ancho deseado */
+    height: 2.5rem; /* Establece la altura deseada */
+    color:  rgb(255, 247, 241); /* Color de fondo del botón */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgb(33, 38, 111); /* Color del texto */
+
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 8px; /* Espaciado entre el icono y el texto */
+    padding: 10px 20px; /* Espaciado dentro del botón */
+    border: none; /* Opcional: Elimina el borde del botón */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cursor de puntero */
+    border-radius: 4px; /* Borde redondeado */
+    transition: background-color 0.3s ease; /* Transición para el efecto hover */
+}
+.botonRegresar mat-icon {
+    font-size: 20px; /* Tamaño del icono */
+}
+.botonRegresar:hover {
+    background-color: rgb(64, 93, 180);
+    color:rgb( 255, 255,255);
+  }
+
 /******************* Mas clases *******************/
 
 /*Encabezados con el titulo de la pagina*/
@@ -323,7 +352,7 @@
 
 .centrado {
     text-align: center;
-    
+
 }
 
 /*Recuadros con informacion bancaria*/

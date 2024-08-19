@@ -23,7 +23,7 @@
                     <th scope="col">Nombre Sucursal</th>
                     <th scope="col">Localización</th>
                     <th scope="col">Detalles</th>
-                    <th scope="col"></th>
+                    <th scope="col">Actividades</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -33,7 +33,7 @@
                     <td> {{ item.Loc_Suc }} </td>
                     <td> {{ item.Des_Suc }} </td>
                     <td>
-                      <div class="contenedorUD">
+                      <div *ngIf="item.id != 1" class="contenedorUD">
                         <button routerLink="/super-admin/sucursal/{{item.id}}" class="botonEditData">
                           <mat-icon>edit</mat-icon>
                         </button>

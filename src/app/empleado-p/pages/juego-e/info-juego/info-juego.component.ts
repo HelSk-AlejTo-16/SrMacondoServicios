@@ -65,7 +65,7 @@ export class InfoJuegoComponent implements OnInit{
     if(this.id !==0 ){
       //Es editar
       this._juegoService.updateJuego(this.id, juego).subscribe(() => {
-        this.router.navigate(['/empleado-p/juegos-e'])
+        this.router.navigate(['/empleado/juegos-e'])
       })
     } else {
       //Es agregar

@@ -5,23 +5,23 @@
     <!--Fondo de color-->
     <div class="fondoSA">
         <!--Titulo-->
-        
+
         <!--Botones de navegacion-->
         <div class="contenedorBotones">
             <div class="grupoBotones">
-                <button class="botonNavegacion" routerLink="/empleado-p/home-e">
+                <button class="botonNavegacion" routerLink="/empleado/home-e">
                     <mat-icon>home</mat-icon>
                 </button>
-                <button class="botonNavegacion" routerLink="/empleado-p/ventas-e">
+                <button class="botonNavegacion" routerLink="/empleado/ventas-e">
                     <mat-icon>undo</mat-icon>
                 </button>
             </div>
         </div>
         <!--Contenedor del formulario-->
-        
+
              <div class="contenedorInfo">
                 <form [formGroup]="formAddVenta" (ngSubmit)="addVenta()">
-            
+
                     <h3 >{{operation}} Venta</h3>
                     <div class="mb-3">
                         <label class="form-label">Cantidad de Venta</label>
@@ -40,14 +40,14 @@
                         <option *ngFor="let items of tproductos" [value]="items.id">{{items.Tipo_Prod}}</option>
                         </select>
                     </div>
-                  
-                
-        
+
+
+
             </div>
-        
-        
-        
-   
+
+
+
+
         <!--Botones para guardar la informacion del empleado-->
         <div class="contenedorBotones">
             <div class="grupoBotones">

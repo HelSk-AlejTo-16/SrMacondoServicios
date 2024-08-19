@@ -5,7 +5,7 @@
 
 <!--El aparador de la tienda,la primera pagina que ve el cliente al ingresar-->
 <div class="contenedorTienda">
-    
+
     <!--Apartado de la exposicion de productos-->
     <div class="contenedorProductos">
 
@@ -15,13 +15,13 @@
         </div> <!--Encabezados-->
         <div>
             <h5 class="balsamiq-sans-regular">Puestos</h5>
-           
+
             <!--Agrupacion de tarjetas que muestran a los productos-->
             <div class="contenedorCard">
-                <!--Producto 1-->     
+                <!--Producto 1-->
             <div class="card" *ngFor="let sucursal of ListSucursal">
                 <img [src]="sucursal | sucursalImage" [alt]="sucursal.Nom_Suc"
-                [ngStyle]="{ 'width': '90%', 
+                [ngStyle]="{ 'width': '90%',
                     'height': 'auto',
                     'max-height': '9rem',
                     'object-fit': 'cover',
@@ -33,15 +33,15 @@
                     <small class="text-body-secondary"> Dirección: {{sucursal.Loc_Suc}}</small>
                 </div>
             </div> <!--card-->
-           
-                    
+
+
                 </div>     <!--ContenedorCard-->
                </div><!--Contenedor Productos-->
-       
-               
+
+
 
           </div> <!--contenedorTienda-->
-        
+
     <!--Apartado lateral donde se estan los botones de acceder a las paginas: acerca de, notificame-->
     <div class="contenedorLateral">
         <div class="backgroundTiendaLateral">
@@ -49,33 +49,36 @@
                 Panel
             </div>
             <div class="botonesLateralesGrupo">
-                <button class="botonLateral" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                    <mat-icon>how_to_reg</mat-icon>
-                    Registrar llegada
+                <button class="botonLateral" (click)="marcarPresente()">
+                  <mat-icon>how_to_reg</mat-icon>
+                  Registrar llegada
                 </button>
                 <!--En esta parte este boton registrará un 1 como de que si esta en la base de datos en empleado-->
-                <button class="botonLateral" data-bs-toggle="modal" data-bs-target="#ModalSalida">
-                    <mat-icon>directions_run</mat-icon>
-                    Puesto Salida
+                <button class="botonLateral" (click)="marcarAusente()">
+                  <mat-icon>directions_run</mat-icon>
+                  Puesto Salida
+                </button>
+                <button *ngIf="mostrarBotonRegresar" (click)="regresar()" class="botonRegresar">
+                  <mat-icon>home</mat-icon> Regresar
                 </button>
                 <!--En esta parte este boton registrará un 0 como de que si esta en la base de datos en empleado-->
-                <br>
-                <br>
-                <br>
-                <button class="botonLateral" routerLink="/empleado-p/ventas-e">
+                <br *ngIf="!mostrarBotonRegresar">
+                <br *ngIf="!mostrarBotonRegresar">
+                <br *ngIf="!mostrarBotonRegresar">
+                <button class="botonLateral" routerLink="/empleado/ventas-e">
                   <mat-icon>shopping_cart_checkout</mat-icon>
                   Ventas
               </button>
-                
-                <button class="botonLateral" routerLink="/empleado-p/sucursales-e">
+
+                <button class="botonLateral" routerLink="/empleado/sucursales-e">
                     <mat-icon>restaurant_menu</mat-icon>
                     Sucursales
                 </button>
-                <button class="botonLateral" routerLink="/empleado-p/juegos-e">
+                <button class="botonLateral" routerLink="/empleado/juegos-e">
                     <mat-icon>casino</mat-icon>
                     Juegos
                 </button>
-                <button class="botonLateral" routerLink="/empleado-p/productos-e">
+                <button class="botonLateral" routerLink="/empleado/productos-e">
                   <mat-icon>store</mat-icon>
                   Productos
               </button>
@@ -83,49 +86,14 @@
                 <mat-icon>mail</mat-icon>
                 Avisos
             </button>
-                
-                
+
+
+
             </div>
         </div>
     </div>
   </div>
 <!--Modales-->
-<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmacion de Entrada</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Se confirma su llegada
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Aceptar</button>
-        </div>
-       
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="ModalSalida" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmacion de Salida</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            Se confirmó su llegada
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-success" data-bs-dismiss="modal">Aceptar</button>
-          </div>
-         
-       
-      </div>
-    </div>
-  </div>
 
   <div class="modal fade" id="ModalAviso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -144,7 +112,7 @@
                   <tr>
                     <th scope="col">Remitente</th>
                     <th scope="col">Nota</th>
-                    
+
                     <th scope="col"></th>
                   </tr>
                 </thead>
@@ -154,7 +122,7 @@
                     <td>{{ item.id }}</td>
                     <td>{{ item.Remi_Nota }}</td>
                     <td>{{ item.Nota_Glob}}</td>
-                   
+
                     <td>
                       <div class="contenedorUD">
 
@@ -173,8 +141,8 @@
           <div class="modal-footer">
               <button type="button" class="btn btn-success" data-bs-dismiss="modal">Aceptar</button>
           </div>
-         
-       
+
+
       </div>
     </div>
   </div>

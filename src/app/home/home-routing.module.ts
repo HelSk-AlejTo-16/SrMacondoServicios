@@ -4,8 +4,10 @@ import { TiendaComponent } from './pages/tienda/tienda.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
 import { AvisameComponent } from './pages/avisame/avisame.component';
-import { ProductoComponent } from './pages/producto/producto.component';
-import { ListaComponent } from './pages/lista/lista.component';
+import { ListaSucursalComponent } from './pages/listas/lista-sucursal/lista-sucursal.component';
+import { ListaJuegoComponent } from './pages/listas/lista-juego/lista-juego.component';
+import { ListaProductoComponent } from './pages/listas/lista-producto/lista-producto.component';
+import { ListaMenuComponent } from './pages/listas/lista-menu/lista-menu.component';
 
 const routes: Routes = [
   {
@@ -25,12 +27,20 @@ const routes: Routes = [
         component: AvisameComponent
       },
       {
-        path:  'producto',
-        component: ProductoComponent
+        path:  'sucursales',
+        component: ListaSucursalComponent
       },
       {
-        path:  'lista',
-        component: ListaComponent
+        path:  'juegos',
+        component: ListaJuegoComponent
+      },
+      {
+        path:  'productos',
+        component: ListaProductoComponent
+      },
+      {
+        path:  'menu',
+        component: ListaMenuComponent
       },
       {
         path: '',

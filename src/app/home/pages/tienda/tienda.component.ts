@@ -20,35 +20,27 @@ export class TiendaComponent implements OnInit {
     private _juegoService: JuegoService
   ) { }
   ngOnInit(): void{
-    this.getListProducts();
-    this.getListSucursal();
-    this.getListJuego();
-    
-      }
-      getListProducts(){
-      
-       
-          this._productService.getListProducts().subscribe((data:Producto[])=> {
-            this.ListProducto = data;
-           
-            })
-    
-   
-      }
-      getListSucursal(){
-        this._sucursalService.getListSucursal().subscribe((data:Sucursal[])=> {
-          this.ListSucursal = data;
-      })
-      
+
   }
+
+  getListProducts(){
+    this._productService.getListProducts().subscribe((data:Producto[])=> {
+      this.ListProducto = data;
+    })
+  }
+
+  getListSucursal(){
+    this._sucursalService.getListSucursal().subscribe((data:Sucursal[])=> {
+      this.ListSucursal = data;
+    })
+  }
+
   getListJuego(){
     this._juegoService.getListJuego().subscribe((data:Juego[])=> {
       this.ListJuego = data;
 
   })
- 
-  
 }
-  
+
 
 }

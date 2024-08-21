@@ -16,7 +16,7 @@
         </div>
         <!--Tabla-->
         <div class="contenedorTabla">
-          <table *ngIf="listEmpleado.length > 0" class="styled-table">
+          <table *ngIf="listEmpleado.length > 1" class="styled-table">
               <thead>
                 <tr>
                   <th scope="col">ID</th>
@@ -30,17 +30,12 @@
               </thead>
               <tbody>
                 <tr *ngFor="let item of listEmpleado">
-                  <td>{{ item.id }}</td>
-                  <td *ngIf="item.id == 1">{{ item.Emp_Nom }}</td>
+                  <td *ngIf="item.id != 1">{{ item.id }}</td>
                   <td *ngIf="item.id != 1">{{ item.Emp_Nom }} {{ item.Ape_Pat }} {{ item.Ape_Mat }}</td>
                   <td *ngIf="item.id != 1">{{ item.Emp_Telefono }}</td>
-                  <td *ngIf="item.id == 1"> </td>
                   <td *ngIf="item.id != 1">{{ item.Emp_Email }}</td>
-                  <td *ngIf="item.id == 1"> </td>
                   <td *ngIf="item.id != 1">{{ item.Edad }}</td>
-                  <td *ngIf="item.id == 1"> </td>
                   <td *ngIf="item.id != 1">{{ item.Estado ? 'Presente' : 'Ausente' }}</td>
-                  <td *ngIf="item.id == 1"> </td>
                   <td *ngIf="item.id != 1">
                     <div class="contenedorUD">
                       <button routerLink="/super-admin/empleado/{{item.id}}" class="botonEditData">
@@ -52,11 +47,10 @@
                       </button>
                     </div>
                   </td>
-                  <td *ngIf="item.id == 1"> </td>
                 </tr>
               </tbody>
             </table>
-            <h6 *ngIf="listEmpleado.length == 0">Upps! No hay empleados para mostrar</h6>
+            <h6 *ngIf="listEmpleado.length == 1">Upps! No hay empleados para mostrar</h6>
       </div>
         <div>
             <button class="botonesAgregar" routerLink="/super-admin/nuevo-empleado">

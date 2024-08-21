@@ -12,7 +12,7 @@ export class ProductoService {
   private myapiUrl:string;
 
 
-  constructor(private http:HttpClient) { 
+  constructor(private http:HttpClient) {
     this.myappUrl = environment.endpoint;
     this.myapiUrl = 'api/productos/'
   }
@@ -33,6 +33,6 @@ export class ProductoService {
     return this.http.get<Producto>(`${this.myappUrl}${this.myapiUrl}${id}`)
   }
   updateProduct(id: string, product:Producto):Observable<void>{
-return this.http.put<void>(`${this.myappUrl}${this.myapiUrl}${id}`,product)
+    return this.http.put<void>(`${this.myappUrl}${this.myapiUrl}${id}`,product)
   }
 }

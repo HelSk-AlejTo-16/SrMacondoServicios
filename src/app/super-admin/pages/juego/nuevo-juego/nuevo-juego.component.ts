@@ -17,7 +17,6 @@ export class NuevoJuegoComponent implements OnInit{
   id: number;
   operacion: string = 'Agregar ';
 
-
   constructor( private fb: FormBuilder,
     private router: Router,
     private aRoute: ActivatedRoute,
@@ -27,11 +26,11 @@ export class NuevoJuegoComponent implements OnInit{
     ) {
     this.formAddJuego = this.fb.group({
       id: [0],
-      Nom_Jueg: ['', [Validators.required, Validators.maxLength(30)]],
-      Precio: [null, [Validators.required]],
-      Tiempo: ['', [Validators.required, Validators.maxLength(30)]],
+      Nom_Jueg: ['', [Validators.required, Validators.maxLength(30), Validators.minLength(1)]],
+      Precio: [null, [Validators.required, Validators.min(1)]],
+      Tiempo: ['', [Validators.required, Validators.maxLength(30), Validators.minLength(1)]],
       Dispon_Jueg: ['', Validators.required],
-      Img_Jueg: ['', [Validators.required, Validators.maxLength(300)]],
+      Img_Jueg: ['', [Validators.required, Validators.maxLength(300), Validators.minLength(1)]],
     })
     this.id = Number(aRoute.snapshot.paramMap.get('id'));
   }

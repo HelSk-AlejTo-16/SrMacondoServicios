@@ -3,112 +3,37 @@
 
 <!--El aparador de la tienda,la primera pagina que ve el cliente al ingresar-->
 <div class="contenedorTienda">
-    
-    <!--Apartado de la exposicion de productos-->
-    <div class="contenedorProductos">
 
-        <!--Titulo del apartado-->
-        <div class="encabezados">
-            <h1 class="Examiner">Tienda</h1>
-        </div>
+  <!--Apartado de la exposicion de productos-->
+  <div class="contenedorProductos">
 
-        <!--Grupo de productos de la tienda-->
-        <div>
-            <h5 class="balsamiq-sans-regular">Productos</h5>
-            <!--Agrupacion de tarjetas que muestran a los productos-->
-            <div class="contenedorCard">
-                <!--Producto 1-->
-                <div class="card" *ngFor="let producto of ListProducto">
-                    <img [src]="producto | productoImage" [alt]="producto.Nom_Prod"
-                    [ngStyle]="{ 'width': '90%', 
-                        'height': 'auto',
-                        'max-height': '9rem',
-                        'object-fit': 'cover',
-                       'margin': '10px'}">
-                    <div class="card-body">
-                      <h5 class="card-title">{{producto.Nom_Prod}}</h5>
-                      <p class="card-text">Precio: ${{producto.Prec_Prod}}</p>
-                    </div>
-                    <div class="card-footer">
-                      <small class="text-body-secondary">Existencias: {{producto.Exist_Prod}}</small>
-                    </div>
-                </div>
-                
-
-
-            <div>
-                <button class="botonVerMas" routerLink="/sr-macondo/lista">
-                    <mat-icon>more_vert</mat-icon>
-                    Ver más
-                </button>
-            </div>
-
-        </div>
-
-        <div class="separador"></div>
-
-        <!--Grupo de Alimentos de la tienda-->
-        <h5 class="balsamiq-sans-regular">Sucursales</h5>
-        <div class="contenedorCard">
-            <div class="card" *ngFor="let sucursal of ListSucursal">
-                <img [src]="sucursal | sucursalImage2" [alt]="sucursal.Nom_Suc"
-                [ngStyle]="{ 'width': '90%', 
-                    'height': 'auto',
-                    'max-height': '9rem',
-                    'object-fit': 'cover',
-                   'margin': '10px'}">
-                <div class="card-body">
-                  <h5 class="card-title">{{sucursal.Nom_Suc}}</h5>
-                </div>
-                <div class="card-footer">
-                    <small class="text-body-secondary"> Dirección: {{sucursal.Loc_Suc}}</small>
-                </div>
-            </div>
-           
-            <div>
-                <button class="botonVerMas" routerLink="/sr-macondo/lista">
-                    <mat-icon>more_vert</mat-icon>
-                    Ver más
-                </button>
-            </div>
-
-        </div>
-
-        <div class="separador"></div>
-
-        <!--Grupo de juegos de la tienda-->
-        <div>
-            <h5 class="balsamiq-sans-regular">Juegos</h5>
-            <div class="contenedorCard">
-                <div class="card" *ngFor="let juego of ListJuego">
-                    <img [src]="juego | JuegoImage" [alt]="juego.Nom_Jueg"
-                    [ngStyle]="{ 'width': '90%', 
-                        'height': 'auto',
-                        'max-height': '9rem',
-                        'object-fit': 'cover',
-                       'margin': '10px'}">
-                    <div class="card-body">
-                      <h5 class="card-title">{{juego.Nom_Jueg}}</h5>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary"> ${{juego.Precio}}</small>
-                    </div>
-                </div>
-               
-    
-            </div>
-
-            <div>
-                <button class="botonVerMas" routerLink="/sr-macondo/lista">
-                    <mat-icon>more_vert</mat-icon>
-                    Ver más
-                </button>
-            </div>
-
-        </div>
-
+    <!--Titulo del apartado-->
+    <div class="encabezados">
+        <h1 class="Examiner">Tienda</h1>
     </div>
-</div>
+
+    <!-- Contenedor de productos -->
+    <div class="contenedor-imagenes">
+      <div class="imagen" routerLink="/sr-macondo/productos">
+          <img src="/assets/image/productos.jpg" alt="productos">
+          <div class="texto-centro">Productos</div>
+      </div>
+      <div class="imagen" routerLink="/sr-macondo/menu">
+        <img src="/assets/image/menu.jpg"  alt="">
+        <div class="texto-centro">Menu</div>
+      </div>
+      <div class="imagen" routerLink="/sr-macondo/sucursales">
+        <img src="/assets/image/sucursales.jpg" alt="">
+        <div class="texto-centro">Sucursales</div>
+      </div>
+      <div class="imagen" routerLink="/sr-macondo/juegos">
+        <img src="/assets/image/futbolito.jpg" alt="">
+        <div class="texto-centro">Juegos</div>
+      </div>
+    </div>
+
+
+  </div>
 
     <!--Apartado lateral donde se estan los botones de acceder a las paginas: acerca de, notificame-->
     <div class="contenedorLateral">

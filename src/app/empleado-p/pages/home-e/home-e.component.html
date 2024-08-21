@@ -49,12 +49,12 @@
                 Panel
             </div>
             <div class="botonesLateralesGrupo">
-                <button class="botonLateral" (click)="marcarPresente()">
+                <button *ngIf="id!=1" class="botonLateral" (click)="marcarPresente()">
                   <mat-icon>how_to_reg</mat-icon>
                   Registrar llegada
                 </button>
                 <!--En esta parte este boton registrará un 1 como de que si esta en la base de datos en empleado-->
-                <button class="botonLateral" (click)="marcarAusente()">
+                <button *ngIf="id!=1" class="botonLateral" (click)="marcarAusente()">
                   <mat-icon>directions_run</mat-icon>
                   Puesto Salida
                 </button>

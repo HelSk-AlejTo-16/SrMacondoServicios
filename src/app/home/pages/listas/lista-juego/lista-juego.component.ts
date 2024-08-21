@@ -14,14 +14,15 @@ export class ListaJuegoComponent implements OnInit {
     private _juegoService: JuegoService
   ) { }
   ngOnInit(): void{
-
+    this.getListJuego();
   }
+  
 
   getListJuego(){
     this._juegoService.getListJuego().subscribe((data:Juego[])=> {
       this.ListJuego = data;
-
   })
+ 
+  
 }
-
 }

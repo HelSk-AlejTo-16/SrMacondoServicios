@@ -27,19 +27,16 @@
                         <label class="form-label">Cantidad de Venta</label>
                         <input formControlName="Cant_vent" type="number" class="form-control"  placeholder="Ingresa La cantidad de Venta">
                         <samp *ngIf="formAddVenta.get('Cant_vent')?.hasError('required') && formAddVenta.get('Cant_vent')?.touched">El Campo del nombre de la cantidad de venta<strong>Es requerido</strong></samp>
-                    <div class="mb-3">
-                        <label class="form-label">Total de Venta</label>
-                        <input formControlName="TotalVent" type="number" class="form-control"  placeholder="Total vendido">
-                        <samp *ngIf="formAddVenta.get('TotalVent')?.hasError('required')&& formAddVenta.get('TotalVent')?.touched " >El Campo del total de venta   <strong>Es requerido</strong></samp>
-                    </div>
+                 
                     <div class="mb-3">
 
                         <label class="form-label">IDProducto</label>
                         <select formControlName="IDProducto" class="form-control">
                         <option value="" disabled>Seleccione un Producto</option>
-                        <option *ngFor="let items of tproductos" [value]="items.id">{{items.Tipo_Prod}}</option>
+                        <option *ngFor="let items of productos" [value]="items.id">{{items.Nom_Prod}}</option>
                         </select>
                     </div>
+                   
 
 
 

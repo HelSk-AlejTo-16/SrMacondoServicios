@@ -14,7 +14,24 @@
               <mat-icon>home</mat-icon>
           </button>
       </div>
+      <div class="contenedorCard">
+        <div class="card" *ngFor="let juego of ListJuego">
+            <img [src]="juego | JuegoImage" [alt]="juego.Nom_Jueg"
+            [ngStyle]="{ 'width': '90%', 
+                'height': 'auto',
+                'max-height': '9rem',
+                'object-fit': 'cover',
+               'margin': '10px'}">
+            <div class="card-body">
+              <h5 class="card-title">{{juego.Nom_Jueg}}</h5>
+            </div>
+            <div class="card-footer">
+                <small class="text-body-secondary"> ${{juego.Precio}}</small>
+            </div>
+        </div>
+       
 
+    </div>
 
 
   </div>

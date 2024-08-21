@@ -15,7 +15,7 @@ export class ListaSucursalComponent implements OnInit{
 
   ) { }
   ngOnInit(): void{
-
+this.getListSucursal();
   }
 
   getListSucursal(){

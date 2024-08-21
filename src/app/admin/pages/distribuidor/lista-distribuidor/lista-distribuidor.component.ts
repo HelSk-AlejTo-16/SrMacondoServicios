@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { distribuidors } from '../../../../interfaces/distribuidors';
 import { distribuidorsService } from '../../../../services/distribuidors.service';
 import { ToastrService } from 'ngx-toastr';
-import { getdistribuidors } from '../../../../../../../server/src/controllers/distribuidors';
+
 
 @Component({
   selector: 'app-lista-distribuidor',

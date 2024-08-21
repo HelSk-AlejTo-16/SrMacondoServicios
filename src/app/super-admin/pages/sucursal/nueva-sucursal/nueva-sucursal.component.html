@@ -26,7 +26,7 @@
                 <div class="mb-3">
                     <label for="Nom_Suc" class="form-label">Nombre Sucursal</label>
                     <input formControlName="Nom_Suc" type="text" class="form-control" id="Nom_Suc" placeholder="Ingresar nombre de la sucursal">
-                    <samp *ngIf="formAddSucursal.get('Nom_Suc')?.hasError('required') && formAddSucursal.get('Nom_Suc')?.touched">
+                    <samp *ngIf="(formAddSucursal.get('Nom_Suc')?.hasError('required') || formAddSucursal.get('Nom_Suc')?.hasError('minlength')) && formAddSucursal.get('Nom_Suc')?.touched">
                         * Se requiere un nombre para la <strong>sucursal</strong>
                     </samp>
                     <samp *ngIf="formAddSucursal.get('Nom_Suc')?.hasError('maxlength')">
@@ -36,7 +36,7 @@
                 <div class="mb-3">
                     <label for="Loc_Suc" class="form-label">Localización</label>
                     <input formControlName="Loc_Suc" type="text" class="form-control" id="Loc_Suc" placeholder="Agregar localización">
-                    <samp *ngIf="formAddSucursal.get('Loc_Suc')?.hasError('required') && formAddSucursal.get('Loc_Suc')?.touched">
+                    <samp *ngIf="(formAddSucursal.get('Loc_Suc')?.hasError('required') || formAddSucursal.get('Loc_Suc')?.hasError('minlength'))  && formAddSucursal.get('Loc_Suc')?.touched">
                         * Se necesita una <strong>localidad</strong>
                     </samp>
                     <samp *ngIf="formAddSucursal.get('Loc_Suc')?.hasError('maxlength')">
@@ -46,7 +46,7 @@
                 <div class="mb-3">
                     <label for="Des_Suc" class="form-label">Descripción</label>
                     <input formControlName="Des_Suc" type="text" class="form-control" id="Des_Suc" placeholder="Datos sobre la sucursal">
-                    <samp *ngIf="formAddSucursal.get('Des_Suc')?.hasError('required') && formAddSucursal.get('Des_Suc')?.touched">
+                    <samp *ngIf="(formAddSucursal.get('Des_Suc')?.hasError('required') || formAddSucursal.get('Des_Suc')?.hasError('minlength')) && formAddSucursal.get('Des_Suc')?.touched">
                         * El campo descripción es <strong>requerido</strong>
                     </samp>
                     <samp *ngIf="formAddSucursal.get('Des_Suc')?.hasError('maxlength')">
@@ -57,7 +57,7 @@
                 <div class="mb-3">
                   <label for="Img_Suc" class="form-label">Link imagen de la sucursal</label>
                   <input formControlName="Img_Suc" type="text" class="form-control" id="Img_Suc" placeholder="Link de la imagen">
-                  <samp *ngIf="formAddSucursal.get('Img_Suc')?.hasError('required') && formAddSucursal.get('Img_Suc')?.touched">
+                  <samp *ngIf="(formAddSucursal.get('Img_Suc')?.hasError('required') ||formAddSucursal.get('Img_Suc')?.hasError('minlength') ) && formAddSucursal.get('Img_Suc')?.touched">
                       * El campo descripción es <strong>requerido</strong>
                   </samp>
                   <samp *ngIf="formAddSucursal.get('Img_Suc')?.hasError('maxlength')">

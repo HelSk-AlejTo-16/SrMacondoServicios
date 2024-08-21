@@ -28,10 +28,10 @@ export class NuevaSucursalComponent implements OnInit {
 
     this.formAddSucursal = this.fb.group({
       id: [0],
-      Nom_Suc: ['', [Validators.required, Validators.maxLength(30)]],
-      Loc_Suc: ['', [Validators.required, Validators.maxLength(60)]],
-      Des_Suc: ['', [Validators.required, Validators.maxLength(300)]],
-      Img_Suc: ['', [Validators.required, Validators.maxLength(300)]],
+      Nom_Suc: ['', [Validators.required, Validators.maxLength(30), Validators.minLength(1)]],
+      Loc_Suc: ['', [Validators.required, Validators.maxLength(60), Validators.minLength(1)]],
+      Des_Suc: ['', [Validators.required, Validators.maxLength(300), Validators.minLength(1)]],
+      Img_Suc: ['', [Validators.required, Validators.maxLength(300), Validators.minLength(1)]],
     })
     this.id = Number(aRoute.snapshot.paramMap.get('id'));
   }
@@ -90,8 +90,6 @@ export class NuevaSucursalComponent implements OnInit {
         // Manejar error: mostrar mensaje de error, etc.
       })
     }
-
-
   }
 
 }

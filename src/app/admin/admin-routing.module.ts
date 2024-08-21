@@ -5,6 +5,8 @@ import { LayoutSaComponent } from './pages/layout-sa/layout-sa.component';
 
 import { NuevoNotasComponent } from './pages/notas/nuevo-notas/nuevo-mensaje.component';
 import { ListaNotaComponent } from './pages/notas/listas-notas/lista-notas.component';
+import { ListaDistribuidorComponent } from './pages/distribuidor/lista-distribuidor/lista-distribuidor.component';
+import { NuevoDistribuidorComponent } from './pages/distribuidor/nuevo-distribuidor/nuevo-distribuidor.component';
 
 
 
@@ -36,9 +38,24 @@ const routes: Routes = [
         component: NuevoNotasComponent
       },
 
+      //Carga los componentes de probedores
+
+      {
+        path: 'distribuidores',
+        component: ListaDistribuidorComponent
+      },
+      {
+        path: 'distribuidor/:id',
+        component: NuevoDistribuidorComponent
+      },
+      {
+        path: 'nuevo-distribuidor',
+        component: NuevoDistribuidorComponent
+      },
+
 
       //Carga a los componentes de sucursal
-    
+
       //Lo que siempre carga aunque no se escriba nada
       {
         path: '',

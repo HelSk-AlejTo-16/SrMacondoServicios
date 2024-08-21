@@ -34,13 +34,13 @@ export class NuevoEmpleadoComponent implements OnInit {
     private _errorService: ErrorService
     ) {
       this.formAddEmpleado = this.fb.group({
-        Emp_Nom: ['', [Validators.required, Validators.maxLength(30)]],
-        Ape_Pat: ['', [Validators.required, Validators.maxLength(20)]],
-        Ape_Mat: ['', [Validators.required, Validators.maxLength(20)]],
+        Emp_Nom: ['', [Validators.required, Validators.maxLength(30), Validators.minLength(1)]],
+        Ape_Pat: ['', [Validators.required, Validators.maxLength(20), Validators.minLength(1)]],
+        Ape_Mat: ['', [Validators.required, Validators.maxLength(20), Validators.minLength(1)]],
         Edad: ['', [Validators.required, Validators.min(15), Validators.max(99)]],
-        Emp_Telefono: ['', [Validators.required, Validators.maxLength(10)]],
-        Emp_Email: ['', [Validators.required, Validators.maxLength(30), Validators.email]],
-        Contrasenia: ['', [Validators.required, Validators.maxLength(20)]],
+        Emp_Telefono: ['', [Validators.required, Validators.maxLength(10), Validators.minLength(1)]],
+        Emp_Email: ['', [Validators.required, Validators.maxLength(50), Validators.minLength(1), Validators.email]],
+        Contrasenia: ['', [Validators.required, Validators.maxLength(20), Validators.minLength(1)]],
         Estado: ['', [Validators.required]],
         IDRol: ['', [Validators.required]],
         IDSucursal: ['', [Validators.required]]

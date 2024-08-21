@@ -1,11 +1,11 @@
-<!--<p>lista-juego works!</p>-->
+<!--<p>lista-distribuidor works!</p>-->
 <link rel="stylesheet" href="../../../../../css/sa-contenido.css">
 
 <div clss="principalContenedor">
     <!--Fondo de color-->
     <div class="fondoSA">
         <!--Titulo-->
-        <h1 class="Examiner">Notas</h1>
+        <h1 class="Examiner">Distribuidores</h1>
         <!--Botones de navegacion-->
         <div class="contenedorBotones">
             <div class="grupoBotones">
@@ -16,30 +16,27 @@
         </div>
         <!--Tabla-->
         <div class="contenedorTabla">
-            <table *ngIf="ListNotas.length > 0" class="styled-table">
+            <table *ngIf="listDistribuidor.length > 0" class="styled-table">
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Remitente Nota</th>
-                    <th scope="col">Nota</th>
-
-                    <th scope="col"></th>
+                    <th scope="col">Nombre del distribuidor</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Actividades</th>
                   </tr>
                 </thead>
-
                 <tbody>
-                  <tr *ngFor="let item of ListNotas">
-                    <td>{{ item.id }}</td>
-                    <td>{{ item.Remi_Nota }}</td>
-                    <td>{{ item.Nota_Glob}}</td>
-
+                  <tr *ngFor="let item of listDistribuidor">
+                    <td> {{ item.id }} </td>
+                    <td> {{ item.Nom_Distr }} </td>
+                    <td> {{ item.Desc_Distr }} </td>
                     <td>
-                      <div class="contenedorUD">
-                        <button routerLink="/admin/mensaje/{{item.id}}" class="botonEditData">
+                      <div *ngIf="item.id != 1" class="contenedorUD">
+                        <button routerLink="/super-admin/sucursal/{{item.id}}" class="botonEditData">
                           <mat-icon>edit</mat-icon>
                         </button>
 
-                        <button (click)="deleteNota(item.id!)" class="botonEliminar">
+                        <button (click)="deleteDistribuidorS(item.id!)" class="botonEliminar">
                           <mat-icon>delete</mat-icon>
                         </button>
                       </div>
@@ -47,17 +44,16 @@
                   </tr>
                 </tbody>
               </table>
-              <h6 *ngIf="ListNotas.length == 0">Upps! No hay Notas para mostrar</h6>
+              <h6 *ngIf="listDistribuidor.length == 0">Upps! No hay sucursales para mostrar</h6>
         </div>
         <div>
-            <button class="botonesAgregar" routerLink="/admin/nuevo-mensaje">
-                Agregar Nota
+            <button class="botonesAgregar" routerLink="/admin/nuevo-distribuidor">
+                Agregar Distribuidor
             </button>
         </div>
     </div>
 
 </div>
 <div>
-    <p>juegos</p>
+    <p>Distribuidor</p>
 </div>
-

@@ -10,6 +10,8 @@ import { MaterialModule } from '../material/material.module';
 import { NuevoNotasComponent } from './pages/notas/nuevo-notas/nuevo-mensaje.component';
 
 import { ListaNotaComponent } from './pages/notas/listas-notas/lista-notas.component';
+import { NuevoDistribuidorComponent } from './pages/distribuidor/nuevo-distribuidor/nuevo-distribuidor.component';
+import { ListaDistribuidorComponent } from './pages/distribuidor/lista-distribuidor/lista-distribuidor.component';
 
 
 
@@ -19,8 +21,10 @@ import { ListaNotaComponent } from './pages/notas/listas-notas/lista-notas.compo
     LayoutSaComponent,
     PrincipalSaComponent,
     ListaNotaComponent,
-    NuevoNotasComponent
-   
+    NuevoNotasComponent,
+    NuevoDistribuidorComponent,
+    ListaDistribuidorComponent
+
   ],
   imports: [
     CommonModule,

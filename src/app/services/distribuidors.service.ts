@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from '../../environment/environment';
 import { distribuidors } from '../interfaces/distribuidors';
+import { deletedistribuidor } from '../../../../server/src/controllers/distribuidors';
 
 
 @Injectable({
@@ -22,6 +23,22 @@ export class distribuidorsService {
     return this.http.get<distribuidors[]>(`${this.myAppUrl}${this.myApiUrl}`).pipe(
       catchError(this.handleError)
     );
+  }
+
+  deletedistribuidor (id: number): Observable<void>{
+    return this.http.delete<void>(`${this.myAppUrl}${this.myApiUrl}${id}`);
+  }
+
+  saveDistribuidor (distribuidors: distribuidors): Observable<void> {
+    return this.http.post<void>(`${this.myAppUrl}${this.myApiUrl}`,distribuidors);
+  }
+
+  getDistribuidor(id: number): Observable<distribuidors>{
+    return this.http.get<distribuidors>(`${this.myAppUrl}${this.myApiUrl}${id}`);
+  }
+
+  updateDistribuidor (id: number, distribuidors: distribuidors): Observable<void>{
+    return this.http.put<void>(`${this.myAppUrl}${this.myApiUrl}${id}`, distribuidors);
   }
 
   private handleError(error: HttpErrorResponse) {

@@ -18,24 +18,39 @@
             </button>
         </div>
 
-        
+
         <p class="centrado">¿Deseas recibir notificaciones? Mantente al dia con nuestros productos en oferta o comidas del día con Web Sr. Macondo</p>
         <div class="contenedorEmail">
-
+          <form [formGroup]="formCliente" (ngSubmit)="agregarCliente()">
             <!--Para ingresar el nombre y el correo-->
             <div class="grupoFormulario">
-                <label for="nombre" class="labelEmailF">Nombre</label>
-                <input type="text" class="control" id="nombre" placeholder="Ingresa tu nombre">
+              <label for="Nom_Client" class="labelEmailF">Nombre</label>
+              <input formControlName="Nom_Client" type="text" class="control" id="Nom_Client" placeholder="Ingresa tu nombre">
+              <samp *ngIf="(formCliente.get('Nom_Client')?.hasError('required') || formCliente.get('Nom_Client')?.hasError('minlength') ) && formCliente.get('Nom_Client')?.touched">
+                * Se requiere un nombre para el <strong>cliente</strong>
+              </samp>
+              <samp *ngIf="formCliente.get('Nom_Client')?.hasError('maxlength')">
+              * No debe exceder los 60 caracteres
+              </samp>
             </div>
+
             <div class="grupoFormulario">
-                <label for="email" class="labelEmailF">Email</label>
-                <input type="email" class="control" id="email" placeholder="ingresa-tu@email.com">
+              <label for="Email_Client" class="labelEmailF">Email</label>
+              <input formControlName="Email_Client" type="email" class="control" id="Email_Client" placeholder="ingresa-tu@email.com">
+              <samp *ngIf="(formCliente.get('Email_Client')?.hasError('required') || formCliente.get('Email_Client')?.hasError('minlength') ) && formCliente.get('Email_Client')?.touched">
+                * Se requiere un <strong>email</strong>
+              </samp>
+              <samp *ngIf="formCliente.get('Email_Client')?.hasError('maxlength')  || formCliente.get('Email_Client')?.hasError('email') " >
+              * No debe exceder los 50 caracteres y debe ser un correo valido
+              </samp>
             </div>
 
             <div class="contenedorGuardar">
-                <button class="botonGuardar">
-                    <mat-icon>save_as</mat-icon>
-                </button>
+              <button [disabled]="formCliente.invalid" type="submit" class="botonGuardar">
+                  <mat-icon>save_as</mat-icon>
+              </button>
             </div>
+          </form>
+
     </div>
 </div>

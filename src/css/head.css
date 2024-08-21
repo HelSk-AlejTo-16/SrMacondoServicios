@@ -66,7 +66,7 @@
   border: none; /* Elimina el borde por defecto */
   border-radius: 4px; /* Bordes redondeados */
   cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */ 
+  transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
   }
 
 /*Boton ingresar cuando se selecciona*/
@@ -84,7 +84,7 @@
   background-image: url('/assets/image/dark.png');
   background-image: url('/assets/image/dem.png');*/
   background-image: url('/assets/image/AllColorCrema.png');
-  background-attachment: fixed;  
+  background-attachment: fixed;
   /*background-position: center center;*/
   background-size: cover;
   width: 100%;
@@ -101,7 +101,7 @@
   background-image: url('/assets/image/dark.png');
   background-image: url('/assets/image/dem.png');*/
   background-image: url('/assets/image/AllColorCrema.png');
-  background-attachment: fixed;  
+  background-attachment: fixed;
   /*background-position: center center;*/
   background-size: cover;
   width: 100%;

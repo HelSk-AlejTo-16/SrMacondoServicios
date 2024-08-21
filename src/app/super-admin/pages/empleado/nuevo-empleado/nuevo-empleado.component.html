@@ -27,7 +27,7 @@
                 <div class="mb-3">
                     <label for="Emp_Nom" class="form-label">Nombre(s)</label>
                     <input formControlName="Emp_Nom" type="text" class="form-control" id="Emp_Nom" placeholder="Ingresa nombre del empleado">
-                    <samp *ngIf="formAddEmpleado.get('Emp_Nom')?.hasError('required') && formAddEmpleado.get('Emp_Nom')?.touched" class="requerimientosError">
+                    <samp *ngIf="(formAddEmpleado.get('Emp_Nom')?.hasError('required') || formAddEmpleado.get('Emp_Nom')?.hasError('minlength') ) && formAddEmpleado.get('Emp_Nom')?.touched" class="requerimientosError">
                         * El campo nombre es requerido
                     </samp>
                     <samp *ngIf="formAddEmpleado.get('Emp_Nom')?.hasError('maxlength')">
@@ -38,7 +38,7 @@
                 <div class="mb-3">
                     <label for="Ape_Pat" class="form-label">Apellido paterno</label>
                     <input formControlName="Ape_Pat" type="text" class="form-control" id="Ape_Pat" placeholder="Ingresa apellido paterno del empleado">
-                    <samp *ngIf="formAddEmpleado.get('Ape_Pat')?.hasError('required') && formAddEmpleado.get('Ape_Pat')?.touched" class="requerimientosError">
+                    <samp *ngIf="(formAddEmpleado.get('Ape_Pat')?.hasError('required') || formAddEmpleado.get('Ape_Pat')?.hasError('minlength')) && formAddEmpleado.get('Ape_Pat')?.touched" class="requerimientosError">
                         * El campo apellido paterno es requerido
                     </samp>
                     <samp *ngIf="formAddEmpleado.get('Ape_Pat')?.hasError('maxlength')">
@@ -49,7 +49,7 @@
                 <div class="mb-3">
                     <label for="Ape_Mat" class="form-label">Apellido materno</label>
                     <input formControlName="Ape_Mat" type="text" class="form-control" id="Ape_Mat" placeholder="Ingresa apellido materno del empleado">
-                    <samp *ngIf="formAddEmpleado.get('Ape_Mat')?.hasError('required') && formAddEmpleado.get('Ape_Mat')?.touched" class="requerimientosError">
+                    <samp *ngIf="(formAddEmpleado.get('Ape_Mat')?.hasError('required') || formAddEmpleado.get('Ape_Mat')?.hasError('minlength') ) && formAddEmpleado.get('Ape_Mat')?.touched" class="requerimientosError">
                         * El campo apellido materno es requerido
                     </samp>
                     <samp *ngIf="formAddEmpleado.get('Ape_Mat')?.hasError('maxlength')">
@@ -71,7 +71,7 @@
                 <div class="mb-3">
                     <label for="Emp_Telefono" class="form-label">Telefono</label>
                     <input formControlName="Emp_Telefono" type="text" class="form-control" id="Emp_Telefono" placeholder="Ingresa telefono del empleado">
-                    <samp *ngIf="formAddEmpleado.get('Emp_Telefono')?.hasError('required') && formAddEmpleado.get('Emp_Telefono')?.touched" class="requerimientosError">
+                    <samp *ngIf="(formAddEmpleado.get('Emp_Telefono')?.hasError('required') || formAddEmpleado.get('Emp_Telefono')?.hasError('minlength')) && formAddEmpleado.get('Emp_Telefono')?.touched" class="requerimientosError">
                         * El campo telefono es requerido
                     </samp>
                     <samp *ngIf="formAddEmpleado.get('Emp_Telefono')?.hasError('maxlength')">
@@ -82,18 +82,18 @@
                 <div class="mb-3">
                     <label for="Emp_Email" class="form-label">Email</label>
                     <input formControlName="Emp_Email" type="email" class="form-control" id="Emp_Email" placeholder="Ingresa email del empleado">
-                    <samp *ngIf="formAddEmpleado.get('Emp_Email')?.hasError('required') && formAddEmpleado.get('Emp_Email')?.touched" class="requerimientosError">
+                    <samp *ngIf="(formAddEmpleado.get('Emp_Email')?.hasError('required') || formAddEmpleado.get('Emp_Email')?.hasError('minlength')) && formAddEmpleado.get('Emp_Email')?.touched" class="requerimientosError">
                         * El campo email es requerido
                     </samp>
                     <samp *ngIf="formAddEmpleado.get('Emp_Email')?.hasError('maxlength') || formAddEmpleado.get('Emp_Email')?.hasError('email') ">
-                      * No debe exceder los 30 caracteres y debe ser un correo valido
+                      * No debe exceder los 50 caracteres y debe ser un correo valido
                     </samp>
                 </div>
                 <!--Password para acceso a app de sr macondo-->
                 <div class="mb-3">
                     <label for="Contrasenia" class="form-label">Contraseña</label>
                     <input formControlName="Contrasenia" type="text" class="form-control" id="Contrasenia" placeholder="Ingresa contraseña de inicio de sesión">
-                    <samp *ngIf="formAddEmpleado.get('Contrasenia')?.hasError('required') && formAddEmpleado.get('Contrasenia')?.touched" class="requerimientosError">
+                    <samp *ngIf="(formAddEmpleado.get('Contrasenia')?.hasError('required') || formAddEmpleado.get('Contrasenia')?.hasError('minlength')) && formAddEmpleado.get('Contrasenia')?.touched" class="requerimientosError">
                         * El campo contrasenia es requerido
                     </samp>
                     <samp *ngIf="formAddEmpleado.get('Contrasenia')?.hasError('maxlength')">

@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from '../../environment/environment';
 import { distribuidors } from '../interfaces/distribuidors';
-import { deletedistribuidor } from '../../../../server/src/controllers/distribuidors';
+
 
 
 @Injectable({

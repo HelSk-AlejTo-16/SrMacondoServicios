@@ -16,6 +16,7 @@ import { ListaSucursalComponent } from './pages/listas/lista-sucursal/lista-sucu
 import { ListaProductoComponent } from './pages/listas/lista-producto/lista-producto.component';
 import { ListaJuegoComponent } from './pages/listas/lista-juego/lista-juego.component';
 import { ListaMenuComponent } from './pages/listas/lista-menu/lista-menu.component';
+import { FilterProductsByTypePipe } from '../pipes/filterProductsByType.pipe';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ListaMenuComponent } from './pages/listas/lista-menu/lista-menu.compone
     ListaSucursalComponent,
     ListaProductoComponent,
     ListaJuegoComponent,
-    ListaMenuComponent
+    ListaMenuComponent,
+    FilterProductsByTypePipe
   ],
   imports: [
     CommonModule,

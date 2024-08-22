@@ -35,5 +35,9 @@ export class JuegoService {
   updateJuego (id: number, juego: Juego): Observable<void>{
     return this.http.put<void>(`${this.myAppUrl}${this.myApiUrl}${id}`, juego);
   }
-
+  updateDisponibiladJuego(id: number, Dispon_Jueg: boolean): Observable<any> {
+    return this.http.put(`${this.myAppUrl}${this.myApiUrl}${id}/dispon_jueg`,{Dispon_Jueg});
+  }
 }
+
+

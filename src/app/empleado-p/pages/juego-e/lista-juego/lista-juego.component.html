@@ -26,6 +26,7 @@
                     <th scope="col">Tiempo de renta</th>
                     <th scope="col">Disponibilidad</th>
                     <th scope="col"></th>
+                    
 
                   </tr>
                 </thead>
@@ -38,9 +39,14 @@
                     <td>{{ item.Tiempo }}</td>
                     <td>{{ item.Dispon_Jueg? 'Disponible' : 'No Disponible' }}</td>
                     <td><div class="contenedorUD">
-                      <button routerLink="/empleado/juego-e/{{item.id}}" class="botonEditData">
-                        <mat-icon>edit</mat-icon>
+                      <button *ngIf="item.id !== undefined" (click)="marcarDesocupado(item.id!)" class="botonEditData">
+                        <mat-icon>cancel_presentation</mat-icon>
                       </button>
+                      <button *ngIf="item.id !== undefined" (click)="marcarOcupado(item.id!)" class="botonEditData">
+                        <mat-icon>check_circle</mat-icon>
+                      </button>
+                      
+                      
                       </div>
                     </td>
 
@@ -56,4 +62,3 @@
 <div>
     <p>juegos</p>
 </div>
-

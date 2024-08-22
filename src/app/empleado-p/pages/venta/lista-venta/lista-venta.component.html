@@ -34,7 +34,7 @@
                   <tr *ngFor="let item of ListVenta">
                     <td>{{item.id}}</td>
                     <td>{{ item.Cant_vent }}</td>
-                    <td>{{item.TotalVent}}</td>
+                    <td>{{item.TotalVent | currency}}</td>
                     <td>{{ item.IDProducto}}</td>
 
                     <td><button type="button" class="btn btn-primary btn-success btn-sm" routerLink="/empleado/venta-e-edit/{{item.id}}"><mat-icon>edit</mat-icon></button></td>

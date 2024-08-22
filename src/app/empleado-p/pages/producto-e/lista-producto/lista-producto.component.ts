@@ -10,11 +10,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   selector: 'app-lista-producto',
   templateUrl: './lista-producto.component.html',
   styles: ``
-  
+
 })
 export class ListaProductoComponent implements OnInit{
   ListProducto: Producto[] = []
-    
+
 
   constructor(private _productService: ProductoService,
     private _snackBar: MatSnackBar
@@ -25,25 +25,25 @@ export class ListaProductoComponent implements OnInit{
 this.getListProducts();
   }
   getListProducts(){
-  
-   
+
+
       this._productService.getListProducts().subscribe((data:Producto[])=> {
         this.ListProducto = data;
-       
+
         })
 
 
   }
   deleteProduct(id: string){
-    
+
     this._productService.deletedProduct(id).subscribe(data =>{
       console.log(data)
       this.getListProducts();
-      
+
       this._snackBar.open('Venta Eliminada con exito','Cerrar',{
         duration:3000,
       });
-      
+
     })
   }
 

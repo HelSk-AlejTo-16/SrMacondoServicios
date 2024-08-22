@@ -56,7 +56,7 @@ export class NuevoDistribuidorComponent {
 
   agregarDistribuidor () {
     const distribuidor: distribuidors = {
-      Nom_Distr: this.formAddDistribuidor.value.Nom_Suc,
+      Nom_Distr: this.formAddDistribuidor.value.Nom_Distr,
       Desc_Distr: this.formAddDistribuidor.value.Desc_Distr,
     }
 

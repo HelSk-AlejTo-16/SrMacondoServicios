@@ -1,11 +1,11 @@
 <!--<p>nueva-sucursal works!</p>-->
 <link rel="stylesheet" href="../../../../../css/sa-contenido.css">
 
-<div clss="principalContenedor">
+<div class="principalContenedor">
     <!--Fondo de color-->
     <div class="fondoSA">
         <!--Titulo-->
-
+        <h1 class="Examiner">Producto</h1>
         <!--Botones de navegacion-->
         <div class="contenedorBotones">
             <div class="grupoBotones">
@@ -26,29 +26,23 @@
                     <div class="mb-3">
                         <label class="form-label">Nombre del producto</label>
                         <input formControlName="Nom_Prod" type="text" class="form-control"  placeholder="Ingresa el nombre del Producto">
-                        <span *ngIf="form.get('Nom_Prod')?.hasError('required') && form.get('Nom_Prod')?.touched">El Campo del nombre del producto  <strong>Es requerido</strong></span>
+                        <span *ngIf="(form.get('Nom_Prod')?.hasError('required') && form.get('Nom_Prod')?.touched) || form.get('Nom_Prod')?.hasError('maxLength')">El Campo del nombre del producto  <strong>Es requerido</strong> y no debe sobrepasar los 40 caracteres</span>
                     <div class="mb-3">
                         <label class="form-label">Tipo de Producto</label>
                         <select formControlName="Tipo_Prod" class="selectorSA">
                             <option value="" disabled>Seleccione un Producto</option>
                             <option *ngFor="let items of tproductos" [value]="items.id">{{items.Tipo_Prod}}</option>
                             </select>
-
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Imagen del producto</label>
                         <input formControlName="Link_img" type="text" class="form-control"  placeholder="Imagen">
-                        <span *ngIf="form.get('Link_img')?.hasError('required')&& form.get('Link_img')?.touched " >El Campo del Tipo  <strong>Es requerido</strong></span>
+                        <span *ngIf="(form.get('Link_img')?.hasError('required')&& form.get('Link_img')?.touched) || form.get('Link_img')?.hasError('maxLength') " >El Campo del Tipo  <strong>Es requerido</strong> y no debe sobrepasar los 1000 caracteres</span>
                     </div>
                     <div class="mb-3">
                         <label  class="form-label">Existencia del Producto</label>
                         <input formControlName="Exist_Prod" type="number" class="form-control"  placeholder="Existencia del producto">
                         <span *ngIf="form.get('Exist_Prod')?.hasError('required') && form.get('Exist_Prod')?.touched">El Campo de las existencias <strong>Es requerido</strong></span>
-                    </div>
-                    <div class="mb-3">
-                        <label  class="form-label">Cantidad Producto</label>
-                        <input formControlName="Cant_Prod" type="number" class="form-control"  placeholder="Existencia del producto">
-                        <span *ngIf="form.get('Cant_Prod')?.hasError('required')&& form.get('Cant_Prod')?.touched">El Campo de la cantidad del producto  <strong>Es requerido</strong></span>
                     </div>
                     <div class="mb-3">
                         <label  class="form-label">Precio Producto</label>

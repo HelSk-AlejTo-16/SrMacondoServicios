@@ -112,25 +112,13 @@
                   <tr>
                     <th scope="col">Remitente</th>
                     <th scope="col">Nota</th>
-
-                    <th scope="col"></th>
                   </tr>
                 </thead>
 
                 <tbody>
                   <tr *ngFor="let item of ListNotas">
-                    <td>{{ item.id }}</td>
                     <td>{{ item.Remi_Nota }}</td>
                     <td>{{ item.Nota_Glob}}</td>
-
-                    <td>
-                      <div class="contenedorUD">
-
-                        <button (click)="deleteNota(item.id!)" class="botonEliminar">
-                          <mat-icon>check</mat-icon>
-                        </button>
-                      </div>
-                    </td>
                   </tr>
                 </tbody>
               </table>

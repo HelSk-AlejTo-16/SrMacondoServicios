@@ -29,13 +29,19 @@
                 <samp *ngIf="formAddNotas.get('Remi_Nota')?.hasError('required') && formAddNotas.get('Remi_Nota')?.touched">
                     * Se requiere  el  remitente de <strong>la nota</strong>
                 </samp>
+                <samp *ngIf="formAddNotas.get('Remi_Nota')?.hasError('maxlength')">
+                  * No debe exceder los 30 caracteres
+                </samp>
               </div>
 
               <div class="mb-3">
                 <label for="Nota_Glob" class="form-label">Nota</label>
-                <input formControlName="Nota_Glob" type="numbers" class="form-control" id="Nota_Glob" placeholder="Ingresar el precio del costo de la renta">
+                <input formControlName="Nota_Glob" type="numbers" class="form-control" id="Nota_Glob" placeholder="Ingresar el mensaje">
                 <samp *ngIf="formAddNotas.get('Nota_Glob')?.hasError('required') && formAddNotas.get('Nota_Glob')?.touched">
-                    * Se requiere un precio para el <strong>juego</strong>
+                    * Se requiere un mensaje <strong>mensaje</strong>
+                </samp>
+                <samp *ngIf="formAddNotas.get('Nota_Glob')?.hasError('maxlength')">
+                  * No debe exceder los 500 caracteres
                 </samp>
               </div>
 

@@ -36,11 +36,10 @@ export class NuevoProductoComponent implements OnInit {
     private _distribuidorsService: distribuidorsService
   ) {
     this.form = this.fb.group({
-      Nom_Prod:['',[Validators.required,Validators.maxLength(15)]],
+      Nom_Prod:['',[Validators.required,Validators.maxLength(40)]],
       Tipo_Prod:['',[Validators.required]],
       Link_img:['',[Validators.required,Validators.maxLength(1000)]],
       Exist_Prod:['',Validators.required],
-      Cant_Prod:['',Validators.required],
       Prec_Prod:['',Validators.required],
       Desc_Prod:['',Validators.required],
       IDSucursal:['',[Validators.required]],
@@ -85,7 +84,6 @@ this._productoService.getProduct(id).subscribe((data:Producto) => {
       Tipo_Prod: data.Tipo_Prod,
       Link_img:data.Link_img,
       Exist_Prod: data.Exist_Prod,
-      Cant_Prod:data.Cant_Prod,
       Prec_Prod:data.Prec_Prod,
       Desc_Prod:data.Desc_Prod,
       IDSucursal:data.IDSucursal,
@@ -101,7 +99,6 @@ this._productoService.getProduct(id).subscribe((data:Producto) => {
       Tipo_Prod: this.form.value.Tipo_Prod,
       Link_img: this.form.value.Link_img,
       Exist_Prod:this.form.value.Exist_Prod,
-      Cant_Prod:this.form.value.Cant_Prod,
       Prec_Prod: this.form.value.Prec_Prod,
       Desc_Prod: this.form.value.Desc_Prod,
       IDSucursal: this.form.value.IDSucursal,

@@ -180,13 +180,13 @@
 
 /*Titulos de los encabezados*/
 .Examiner {
-    font-family: 'Examiner NF W01 Bold','ExaminerNFW01-Bold', sans-serif;
+    font-family: 'Examiner NF W01 Bold','ExaminerNFW01-Bold', 'Livvic', sans-serif;
     letter-spacing: 0.3rem;
   }
 
 /*Subtitulo de la barra lateral*/
 .subLateralTienda {
-    font-family: 'Examiner NF W01 Bold';
+    font-family: 'Examiner NF W01 Bold','ExaminerNFW01-Bold', 'Livvic';
     /*color: rgb(61, 22, 8); */
     color: rgb( 255, 255,255);
     font-size: 2rem;
@@ -433,36 +433,41 @@
 
 
 
-  .contenedorNuevoCard {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  .contenedorCard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: none;
+    padding: 20px;
   }
 
-  .nuevaCard {
-    width: 18rem;
-    margin: 1rem;
+  .card {
+    width: 100%;
+    max-width: 300px; /* Tamaño máximo de cada card */
     border: 1px solid #ddd;
-    padding: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
   }
 
-  .nuevaCard:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  .card img {
+    width: 100%;
+    height: 180px; /* Tamaño máximo para la imagen */
+    object-fit: cover; /* Mantiene las proporciones de la imagen sin deformarse */
   }
 
-  .infoCard {
-    text-align: center;
+  .card-body {
+    padding: 10px;
   }
 
-  .infoCard h5 {
-    margin: 0.5rem 0;
+  .card-footer {
+    padding: 10px;
+    text-align: right;
+    font-size: 0.9rem;
+    background-color: rgb(163, 216, 220);
   }
 
-  .botonVerMas {
-    margin-top: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .text-body-secondary {
+    color: rgb(255, 255, 255);
   }

@@ -14,13 +14,13 @@
 
 /*Titulos de los encabezados*/
 .ExaminerOrigin {
-    font-family: 'Examiner NF W01 Bold';
+    font-family: 'Examiner NF W01 Bold','Livvic';
     letter-spacing: 0.1rem;
   }
 
 /*Titulo de acceder*/
 .Examiner {
-  font-family: 'Examiner NF W01 Bold';
+  font-family: 'Examiner NF W01 Bold','Livvic';
   width: 100%;
   text-align: center;
   letter-spacing: 0.1rem;
@@ -29,7 +29,7 @@
 
 /*Titulo de acceder*/
 .ExaminerError {
-  font-family: 'Examiner NF W01 Bold';
+  font-family: 'Examiner NF W01 Bold','Livvic';
   width: 100%;
   letter-spacing: 0.1rem;
   color: rgb(46, 22, 7);

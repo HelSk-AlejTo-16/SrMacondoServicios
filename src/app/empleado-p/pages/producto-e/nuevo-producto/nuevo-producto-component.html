@@ -55,7 +55,7 @@
                         <span *ngIf="form.get('Desc_Prod')?.hasError('required')&& form.get('Desc_Prod')?.touched">El Campo del descuento <strong>Es requerido</strong></span>
                     </div>
                     <div class="mb-3">
-                        <label  class="form-label">idSucursal</label>
+                        <label  class="form-label">Sucursal</label>
                         <select formControlName="IDSucursal" class="selectorSA">
                             <option value="" disabled>Selecione una sucursal</option>
                             <option *ngFor="let item of sucursales" [value]="item.id">{{item.Nom_Suc}}</option>
@@ -63,7 +63,7 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label  class="form-label">idSucursal</label>
+                        <label  class="form-label">Distribuidor</label>
                         <select formControlName="IDDistribuidor" class="selectorSA">
                             <option value="" disabled>Selecione un distribuidor</option>
                             <option *ngFor="let item of distribuidores" [value]="item.id">{{item.Nom_Distr}}</option>
@@ -78,14 +78,11 @@
 
 
         <!--Botones para guardar la informacion del empleado-->
-        <div class="contenedorBotones">
             <div class="grupoBotones">
                 <button [disabled]="form.invalid" type="submit"class="botonAgreMod">
-                    <mat-icon>add</mat-icon>
-                    Agregar
+                    Guardar
                 </button>
             </div>
-        </div>
     </form>
     </div>
 </div>

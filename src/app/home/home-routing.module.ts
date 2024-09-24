@@ -8,6 +8,7 @@ import { ListaSucursalComponent } from './pages/listas/lista-sucursal/lista-sucu
 import { ListaJuegoComponent } from './pages/listas/lista-juego/lista-juego.component';
 import { ListaProductoComponent } from './pages/listas/lista-producto/lista-producto.component';
 import { ListaMenuComponent } from './pages/listas/lista-menu/lista-menu.component';
+import { MapaComponent } from './pages/mapa/mapa.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
         path:  'menu',
         component: ListaMenuComponent
       },
+    {
+      path: 'mapa',
+      component: MapaComponent
+    },
       {
         path: '',
         redirectTo: 'tienda',

@@ -13,6 +13,7 @@ import { MaterialModule } from './material/material.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AccederTokenInterceptor } from './utils/aceder-token.interceptor';
 import { Error401Component } from './componentes/error401/error401.component';
+import { MapsModule } from './maps/maps.module';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { Error401Component } from './componentes/error401/error401.component';
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     }), // ToastrModule added
+    MapsModule
   ],
   providers: [
     /*provideClientHydration(),*/

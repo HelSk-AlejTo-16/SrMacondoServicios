@@ -17,6 +17,7 @@ import { ListaProductoComponent } from './pages/listas/lista-producto/lista-prod
 import { ListaJuegoComponent } from './pages/listas/lista-juego/lista-juego.component';
 import { ListaMenuComponent } from './pages/listas/lista-menu/lista-menu.component';
 import { FilterProductsByTypePipe } from '../pipes/filterProductsByType.pipe';
+import { MapaComponent } from './pages/mapa/mapa.component';
 
 
 @NgModule({
@@ -33,7 +34,9 @@ import { FilterProductsByTypePipe } from '../pipes/filterProductsByType.pipe';
     ListaProductoComponent,
     ListaJuegoComponent,
     ListaMenuComponent,
-    FilterProductsByTypePipe
+    FilterProductsByTypePipe,
+    MapaComponent
+    
   ],
   imports: [
     CommonModule,

@@ -18,6 +18,7 @@ import { ListaJuegoComponent } from './pages/listas/lista-juego/lista-juego.comp
 import { ListaMenuComponent } from './pages/listas/lista-menu/lista-menu.component';
 import { FilterProductsByTypePipe } from '../pipes/filterProductsByType.pipe';
 import { MapaComponent } from './pages/mapa/mapa.component';
+import { MapsModule } from "../maps/maps.module";
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { MapaComponent } from './pages/mapa/mapa.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    MaterialModule
-  ]
+    MaterialModule,
+    MapsModule
+]
 })
 export class HomeModule { }

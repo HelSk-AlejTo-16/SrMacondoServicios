@@ -132,7 +132,17 @@
     gap: 20px; /* Espacio entre los divs */
     align-items: center;
   }
-
+  .contenedoDiv{
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    width: 100%; /* Asegura que el contenedor ocupe el ancho total */
+    height: auto; /* Permite que el contenedor ajuste su altura automáticamente */
+  }
+  app-map-screen {
+    width: 100%; /* Asegura que el componente ocupe el 100% del ancho del contenedor */
+    height: auto; /* Ajusta la altura de acuerdo al contenido */
+}
 /*Contenedor de los botones para regresar de las paginas de home*/
 .contenedorRegresar {
     display: flex;
